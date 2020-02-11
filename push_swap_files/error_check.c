@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/10 15:32:51 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/11 09:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	error_check(int arg, char **argc)
 	}
 }
 
-void	error_doubles(t_stack_a *lst)
+void	error_doubles(t_stack *lst)
 {
-	t_stack_a	*future;
+	t_stack	*future;
 
 	while (lst)
 	{

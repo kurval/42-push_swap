@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   helper_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:24:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/10 15:26:24 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/11 09:47:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack_a* newNode(int data) 
+t_stack *new_node(int data)
 { 
-    t_stack_a *stackNode;
+    t_stack *new_node;
 	
-	stackNode = (t_stack_a*)malloc(sizeof(t_stack_a)); 
-    stackNode->data = data; 
-    stackNode->next = NULL; 
-    return stackNode; 
+	new_node = (t_stack*)malloc(sizeof(t_stack)); 
+    new_node->data = data; 
+    new_node->next = NULL; 
+    return new_node; 
 }
 
-void push(t_stack_a **root, int data) 
+void push(t_stack **root, int data) 
 { 
-	t_stack_a	*new_node;
+	t_stack	*node;
 
-    new_node = newNode(data);
-    new_node->next = *root;
-    *root = new_node;
+    node = new_node(data);
+    node->next = *root;
+    *root = node;
 } 

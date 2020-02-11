@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/10 15:26:56 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/11 09:48:04 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 # include "../libft/libft.h"
 
-typedef struct          s_stack_a
+typedef struct          s_stack
 {
 	int                 data;
-	struct s_stack_a    *next;
-}                       t_stack_a;
+	struct s_stack    	*next;
+}                       t_stack;
 
 int                     main(int arg, char **argc);
 void					error_check(int arg, char **argc);
-void					error_doubles(t_stack_a *lst);
-t_stack_a*				newNode(int data);
-void					push(t_stack_a **root, int data);
+void					error_doubles(t_stack *lst);
+t_stack					*new_node(int data);
+void					push(t_stack **root, int data);
 
 #endif
