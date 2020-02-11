@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/11 20:45:08 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/11 21:13:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,9 @@ void swap_b(t_stack **root_b)
 
 void rotate_a(t_stack **root_a)
 {
-    int temp;
-    
-    t_stack *current = *root_a;
-    while (current->next != NULL)
-        current = current->next;
-    temp = (*root_a)->data;
-    (*root_a)->data = current->data;
-    current->data = temp;
+    t_stack *second_last = *root_a;
+    while (second_last->next->next != NULL)
+        second_last = second_last->next;
+    push(root_a, second_last->next->data);
+    del_node(&second_last->next);
 }
