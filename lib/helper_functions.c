@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:24:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/12 16:10:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 17:02:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "lib.h"
 
 int is_empty(t_stack *root) 
 { 

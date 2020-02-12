@@ -5,46 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/12 17:11:28 by vkurkela         ###   ########.fr        #
+#    Created: 2020/02/12 16:57:02 by vkurkela          #+#    #+#              #
+#    Updated: 2020/02/12 17:02:03 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME1 = push_swap
+NAME = lib.a
 
-SRC1 = push_swap_files/push_swap.c push_swap_files/moves.c \
-		push_swap_files/sort_stack.c
+SRC = error_check.c helper_functions.c
 
-OBJ = *.o
+HEADERS = lib.h
 
-HEADERS = includes/push_swap.h
-
-LIBFT = libft/libft.a
-LIB = lib/lib.a
-
-CC = gcc
+OBJECTS = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror -I$(HEADERS)
 
-all: $(NAME1)
+CC = gcc
 
-$(NAME1):
-	@${MAKE} -C libft
-	@${MAKE} -C lib
-	$(CC) $(FLAGS) -c $(SRC1)
-	$(CC) $(FLAGS) -o $(NAME1) $(OBJ) $(LIBFT) $(LIB)
-	mkdir obj
-	mv $(OBJ) ./obj
-	
+all: $(NAME)
+
+$(NAME):
+	$(CC) $(FLAGS) -c $(SRC)
+	ar rc $(NAME) $(OBJECTS)
+
 clean:
-	/bin/rm -Rf obj
-	@${MAKE} -C libft clean
-	@${MAKE} -C lib clean
+	/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm -f $(NAME1)
-	@${MAKE} -C libft fclean
-	@${MAKE} -C lib fclean
+	/bin/rm -f $(NAME)
 
 re: fclean all
 
