@@ -6,7 +6,7 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/11 10:18:56 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/12 12:34:55 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME1 = push_swap
 
 SRC1 = push_swap_files/main.c push_swap_files/error_check.c \
 		push_swap_files/helper_functions.c push_swap_files/moves.c \
+		push_swap_files/sort_stack.c
 
 OBJ = *.o
 

@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:24:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/11 21:09:21 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 13:26:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int isEmpty(t_stack *root) 
+int is_empty(t_stack *root) 
 { 
     return !root;
 }
@@ -43,4 +43,15 @@ void push(t_stack **root, int data)
     node = new_node(data);
     node->next = *root;
     *root = node;
+}
+
+void print_stack(t_stack *root)
+{
+    t_stack *current;
+    current = root;
+    while (current)
+	{
+		ft_printf("%d\n", current->data);
+		current = current->next;
+	}
 }
