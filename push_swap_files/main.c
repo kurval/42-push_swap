@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/11 20:12:50 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 10:41:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int arg, char **argc)
 	while (--arg > 0)
 		push(&root_a, ft_atoi(argc[arg]));
 	error_doubles(root_a);
-	//push_b(&root_a, &root_b);
-	//push_a(&root_b, &root_a);
+	//push_ab(&root_a, &root_b);
+	//push_ab(&root_b, &root_a);
 	current_a = root_a;
 	while (current_a)
 	{
@@ -40,8 +40,9 @@ int	main(int arg, char **argc)
 		ft_printf("stack b %d\n", current_b->data);
 		current_b = current_b->next;
 	}
-	//swap_a(&root_a);
-	rotate_a(&root_a);
+	//swap(&root_a);
+	rotate(&root_a);
+	reverse_rotate(&root_a);
 	current_a = root_a;
 	while (current_a)
 	{

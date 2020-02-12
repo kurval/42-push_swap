@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/11 21:09:35 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 10:19:32 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ void					error_check(int arg, char **argc);
 void					error_doubles(t_stack *lst);
 t_stack					*new_node(int data);
 void					push(t_stack **root, int data);
-void 					push_b(t_stack **root_a, t_stack **root_b);
-void					push_a(t_stack **root_b, t_stack **root_a);
+void					push_ab(t_stack **root, t_stack **stack);
 int						isEmpty(t_stack *root);
-void					swap_a(t_stack **root_a);
-void					swap_b(t_stack **root_b);
-void					rotate_a(t_stack **root_a);
+void					swap(t_stack **root);
+void 					reverse_rotate(t_stack **root);
 void					del_node(t_stack **node);
+void					rotate(t_stack **root);
 
 #endif

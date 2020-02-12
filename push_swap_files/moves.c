@@ -6,60 +6,52 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/11 21:13:12 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 10:40:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
 
-void push_b(t_stack **root_a, t_stack **root_b) 
+void push_ab(t_stack **root, t_stack **stack) 
 { 
-    if (isEmpty(*root_a)) 
+    if (isEmpty(*root)) 
         return ; 
-    t_stack *temp = *root_a; 
-    *root_a = (*root_a)->next;
-    push(root_b, temp->data);
+    t_stack *temp = *root; 
+    *root = (*root)->next;
+    push(stack, temp->data);
     free(temp);
 }
 
-void push_a(t_stack **root_b, t_stack **root_a)
-{ 
-    if (isEmpty(*root_b)) 
-        return ; 
-    t_stack *temp = *root_b; 
-    *root_b = (*root_b)->next;
-    push(root_a, temp->data);
-    free(temp);
-}
-
-void swap_a(t_stack **root_a)
+void swap(t_stack **root)
 {
     int temp;
     
-    if (isEmpty(*root_a) || isEmpty((*root_a)->next))
+    if (isEmpty(*root) || isEmpty((*root)->next))
         return ;
-    temp = (*root_a)->data;
-    (*root_a)->data = (*root_a)->next->data;
-    (*root_a)->next->data = temp;
+    temp = (*root)->data;
+    (*root)->data = (*root)->next->data;
+    (*root)->next->data = temp;
 }
 
-void swap_b(t_stack **root_b)
+void reverse_rotate(t_stack **root)
 {
-    int temp;
-    
-    if (isEmpty(*root_b) || isEmpty((*root_b)->next))
-        return ;
-    temp = (*root_b)->data;
-    (*root_b)->data = (*root_b)->next->data;
-    (*root_b)->next->data = temp;
-}
-
-void rotate_a(t_stack **root_a)
-{
-    t_stack *second_last = *root_a;
+    t_stack *second_last = *root;
     while (second_last->next->next != NULL)
         second_last = second_last->next;
-    push(root_a, second_last->next->data);
+    push(root, second_last->next->data);
     del_node(&second_last->next);
+}
+
+void rotate(t_stack **root)
+{   
+    int first = (*root)->data;
+    t_stack *last = new_node(first);
+    t_stack *temp = *root;
+    *root = (*root)->next;
+    free(temp);
+    temp = *root;
+    while (temp->next != NULL)
+        temp = temp->next;
+    temp->next = last;
 }
