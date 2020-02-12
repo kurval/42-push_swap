@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/12 11:28:37 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 17:44:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "lib.h"
 
 static int	cmp(int value1, int value2)
 {

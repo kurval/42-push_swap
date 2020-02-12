@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/12 16:34:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/12 17:46:22 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,14 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
-typedef struct          s_stack
-{
-	int                 data;
-	struct s_stack    	*next;
-}                       t_stack;
+# include "../lib/lib.h"
 
 int                     main(int arg, char **argc);
-void					error_check(int arg, char **argc);
-void					error_doubles(t_stack *lst);
-t_stack					*new_node(int data);
-void					del_node(t_stack **node);
-void					push(t_stack **root, int data);
 void					push_ab(t_stack **root, t_stack **stack, char c);
-int						is_empty(t_stack *root);
 void					swap(t_stack **root, char c);
 void 					reverse_rotate(t_stack **root, char c);
 void					rotate(t_stack **root, char c);
 void					sort_stack(t_stack **root_a, t_stack **root_b);
 void    				sort_stack_3(t_stack **root_a);
-void					print_stack(t_stack *root);
 
 #endif
