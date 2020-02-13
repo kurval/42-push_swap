@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 20:54:05 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/13 21:11:47 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct          s_stack
 {
 	int                 data;
 	struct s_stack    	*next;
+	char				stack;
 }                       t_stack;
 
 void					error_check(int arg, char **argc);
