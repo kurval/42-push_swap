@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_rules.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 16:56:57 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/13 20:46:29 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void    execute_rules(t_stack **root_a, t_stack **root_b, char **rules)
         check_push(root_a, root_b, rules, &i);
         check_rotate(root_a, root_b, rules, &i);
         check_rr(root_a, root_b, rules, &i);
+        free(rules[i]);
         i++;
     }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:25:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 16:21:14 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/13 20:45:56 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	swap(t_stack **root);
 void 	reverse_rotate(t_stack **root);
 void	rotate(t_stack **root);
 void    execute_rules(t_stack **root_a, t_stack **root_b, char **rules);
+int		check_order(t_stack *root_a, t_stack *root_b);
 
 #endif

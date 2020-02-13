@@ -6,13 +6,15 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 16:57:02 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/12 17:45:04 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/13 21:06:07 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lib.a
 
-SRC = error_check.c helper_functions.c
+SRC = error_check.c free_stack.c free_stack.c \
+	push.c print_stack.c new_node.c is_empty.c \
+	del_node.c
 
 HEADERS = lib.h
 
