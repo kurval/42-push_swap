@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:34:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/06 16:20:14 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:18:58 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void				ft_putnbru(unsigned long long value, int *bytes);
 void				ft_putcharb(char c, int *bytes);
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
+int					ft_strncmp_end(const char *s1, const char *s2, size_t n);
 
 #endif

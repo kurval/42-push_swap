@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/06 16:40:58 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/13 16:14:38 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = ft_isprint.c ft_memmove.c ft_putstr.c ft_strdup.c ft_strmapi.c ft_strsplit
 		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_itoa_base.c \
 		get_next_line.c ft_putnbrb.c ft_putstrb.c ft_putnbru.c ft_itoa_baseb.c \
 		ft_numlenu.c ft_itoa_baseul.c ft_strsub_b.c ft_put_zeros.c ft_put_spaces.c ft_put_plus.c \
-		ft_ftoa.c ft_put_space.c ft_putcharb.c
+		ft_ftoa.c ft_put_space.c ft_putcharb.c ft_strncmp_end.c
 
 HEADERS = libft.h
 
