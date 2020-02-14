@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:25:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 20:45:56 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/14 12:05:31 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include "../libft/libft.h"
 # include "../lib/lib.h"
 
-int     main(int arg, char **argc);
-int     read_instructions(char **rules);
+int		main(int arg, char **argc);
+int		read_instructions(char **rules);
 void	push_ab(t_stack **root, t_stack **stack);
 void	swap(t_stack **root);
-void 	reverse_rotate(t_stack **root);
+void	reverse_rotate(t_stack **root);
 void	rotate(t_stack **root);
-void    execute_rules(t_stack **root_a, t_stack **root_b, char **rules);
+void	execute_rules(t_stack **root_a, t_stack **root_b, char **rules);
 int		check_order(t_stack *root_a, t_stack *root_b);
 
 #endif

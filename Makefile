@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/13 20:38:37 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/14 11:27:51 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ $(NAME1):
 	mv $(OBJ) ./obj
 	
 clean:
+	/bin/rm -f $(OBJ)
 	/bin/rm -Rf obj
 	@${MAKE} -C libft clean
 	@${MAKE} -C lib clean

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 21:11:47 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/14 10:16:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include "../libft/libft.h"
 
-typedef struct          s_stack
+typedef struct			s_stack
 {
-	int                 data;
-	struct s_stack    	*next;
+	int					data;
+	struct s_stack		*next;
 	char				stack;
-}                       t_stack;
+}						t_stack;
 
 void					error_check(int arg, char **argc);
 void					error_doubles(t_stack *lst);

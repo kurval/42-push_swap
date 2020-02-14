@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 20:22:38 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 20:40:04 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/14 09:52:59 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		check_order(t_stack *root_a, t_stack *root_b)
 {
 	t_stack *future;
 
-    if (!(is_empty(root_b)))
-        return (0);
+	if (!(is_empty(root_b)))
+		return (0);
 	while (root_a)
 	{
 		future = root_a->next;

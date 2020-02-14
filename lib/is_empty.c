@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 21:01:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 21:02:58 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/14 10:06:50 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int is_empty(t_stack *root) 
-{ 
-    return !root;
+int	is_empty(t_stack *root)
+{
+	return (!root);
 }
