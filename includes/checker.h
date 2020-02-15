@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:25:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/14 12:05:31 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 10:27:15 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 # define MAX 4000
+# define RED     "\x1b[31m"
+# define YELLOW  "\x1b[33m"
+# define RESET   "\x1b[0m"
+# define GREEN   "\x1b[32m"
 
 # include "../libft/libft.h"
 # include "../lib/lib.h"

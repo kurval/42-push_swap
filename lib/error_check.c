@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/14 10:07:29 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 10:21:11 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		error_check(int arg, char **argc)
 	}
 	while (--arg > 0)
 	{
-		if (!(ft_atoi(argc[arg])))
+		if (ft_atoi(argc[arg]) == -1)
 		{
 			write(2, "Error\n", 6);
 			exit(0);
