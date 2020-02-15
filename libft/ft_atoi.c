@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 10:42:06 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 10:20:08 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 11:33:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				ft_atoi(const char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
-			return (sign * res);
+			return (-1);
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
