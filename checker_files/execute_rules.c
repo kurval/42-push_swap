@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/14 10:27:49 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:47:19 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static void	check_r(t_stack **root_a, t_stack **root_b, char **rules, int *i)
 
 static void	check_push(t_stack **root_a, t_stack **root_b, char **rules, int *i)
 {
-	!ft_strncmp_end(rules[*i], "pa", 2) ? push_ab(root_a, root_a) : 0;
-	!ft_strncmp_end(rules[*i], "pb", 2) ? push_ab(root_b, root_a) : 0;
+	!ft_strncmp_end(rules[*i], "pa", 2) ? push_ab(root_b, root_a) : 0;
+	!ft_strncmp_end(rules[*i], "pb", 2) ? push_ab(root_a, root_b) : 0;
 }
 
 static void	check_swap(t_stack **root_a, t_stack **root_b, char **rules, int *i)

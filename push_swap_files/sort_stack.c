@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 17:00:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:44:34 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,35 @@ void	sort_stack_test(t_stack **root_a, t_stack **root_b)
 {
 	int tmp = (*root_a)->data; 
 	push_ab(root_a, root_b);
+	ft_printf("pb\n");
 	while (!is_empty(*root_a)) 
     {
 		tmp = (*root_a)->data;
-        if (tmp > (*root_b)->data) 
+        if (tmp > (*root_b)->data)
+		{
             push_ab(root_a, root_b);
+			ft_printf("pb\n");
+		}
 		else
 		{
 			rotate(root_a);
+			ft_printf("ra\n");
 			while ((*root_b) && tmp < (*root_b)->data)
+			{
 				push_ab(root_b, root_a);
+				ft_printf("pa\n");
+			}
 			reverse_rotate(root_a);
 			push_ab(root_a, root_b);
+			ft_printf("rra\n");
+			ft_printf("pb\n");
 		}
     }
 	while (!is_empty(*root_b))
+	{
 		push_ab(root_b, root_a);
+		ft_printf("pa\n");
+	}
 }
 
 void	sort_stack(t_stack **root_a, t_stack **root_b)
