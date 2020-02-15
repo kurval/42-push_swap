@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 10:30:34 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 10:39:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(int arg, char **argc)
 	if (!(read_instructions(rules)))
 		return (0);
 	execute_rules(&root_a, &root_b, rules);
-	check_order(root_a, root_b) ? ft_printf(GREEN "OK\n" RESET) :\
-	ft_printf(RED "KO\n" RESET);
+	check_order(root_a, root_b) ? ft_printf(BOLDGREEN "OK\n" RESET) :\
+	ft_printf(BOLDRED "KO\n" RESET);
 	/*
 	while (rules[i])
 	{
