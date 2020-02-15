@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/14 12:43:48 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:07:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rotate(t_stack **root)
 	t_stack *last;
 	t_stack *temp;
 
-	if (is_empty(*root))
+	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
 	(*root)->stack == 'a' ? write(1, "ra\n", 3) :\
 	write(1, "rb\n", 3);
@@ -64,7 +64,7 @@ void	reverse_rotate(t_stack **root)
 {
 	t_stack *second_last;
 
-	if (is_empty(*root))
+	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
 	(*root)->stack == 'a' ? write(1, "rra\n", 4) :\
 	write(1, "rrb\n", 4);

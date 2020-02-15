@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 13:08:51 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:00:01 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,26 @@ void	sort_stack_3(t_stack **root_a)
 		swap(root_a);
 }
 
-void	sort_stack_test(t_stack **root_a, t_stack **root_b, int size, int mid)
+void	sort_stack_test(t_stack **root_a, t_stack **root_b)
 {
-	int i;
-	int pivot;
-
-	i = 0;
-	pivot = mid;
-	while (i < size)
-	{
-		if ((*root_a)->data > pivot)
-			push_ab(root_a, root_b);
+	int tmp = (*root_a)->data; 
+	push_ab(root_a, root_b);
+	while (!is_empty(*root_a)) 
+    {
+		tmp = (*root_a)->data;
+        if (tmp > (*root_b)->data) 
+            push_ab(root_a, root_b);
 		else
+		{
 			rotate(root_a);
-		i++;
-	}
+			while ((*root_b) && tmp < (*root_b)->data)
+				push_ab(root_b, root_a);
+			reverse_rotate(root_a);
+			push_ab(root_a, root_b);
+		}
+    }
+	while (!is_empty(*root_b))
+		push_ab(root_b, root_a);
 }
 
 void	sort_stack(t_stack **root_a, t_stack **root_b)
@@ -77,5 +82,5 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 	else if (size == 3)
 		sort_stack_3(root_a);
 	else
-		sort_stack_test(root_a, root_b, size, mid);
+		sort_stack_test(root_a, root_b);
 }
