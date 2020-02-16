@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 19:12:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 19:31:52 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 23:42:27 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int check_rules2(char **rules, int *i)
 {
     if	(ft_strncmp_end(rules[*i], "rra", 3) &&\
         ft_strncmp_end(rules[*i], "rrb", 3) &&\
-        ft_strncmp_end(rules[*i], "rra", 3))
+        ft_strncmp_end(rules[*i], "rrr", 3))
         return (0);
     else
         return (1);

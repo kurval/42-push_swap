@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 17:38:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 23:51:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	rotate(t_stack **root)
 
 void	rotate_both(t_stack **root_a, t_stack **root_b)
 {
+	if (is_empty(*root_a) || is_empty((*root_a)->next) ||\
+	is_empty(*root_b) || is_empty((*root_b)->next))
+		return ;
 	(*root_a)->both = 1;
 	(*root_b)->both = 2;
 	rotate(root_a);
