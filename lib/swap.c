@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:44:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 13:20:40 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 17:38:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_swap(t_stack *root)
 {
-	if (root->stack == '-' || !root->stack)
+	if (root->stack == '-')
 		return ;
 	if (!root->both)
 		root->stack == 'a' ? write(1, "sa\n", 3) :\

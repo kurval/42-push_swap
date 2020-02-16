@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper_funtions.c                                  :+:      :+:    :+:   */
+/*   helper_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 13:25:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 13:25:07 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 17:31:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ t_stack	*new_node(int data, char c)
 
 	new_node = (t_stack*)malloc(sizeof(t_stack));
 	new_node->data = data;
-	new_node->next = NULL;
 	new_node->stack = c;
+	new_node->next = NULL;
 	return (new_node);
 }
 
