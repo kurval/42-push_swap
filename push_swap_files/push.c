@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 11:33:53 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/16 10:45:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int arg, char **argc)
+void	push_ab(t_stack **root, t_stack **stack)
 {
-	t_stack	*root_a;
-	t_stack	*root_b;
+	t_stack *temp;
+	char c;
 
-	root_a = NULL;
-	root_b = NULL;
-	error_check(arg, argc);
-	while (--arg)
-		push(&root_a, ft_atoi(argc[arg]), 'a');
-	error_doubles(root_a);
-
-	//ft_printf("stack a:\n");
-	//print_stack(root_a);
-
-	sort_stack(&root_a, &root_b);
-	//ft_printf("2 round:\n");
-	//ft_printf("stack b:\n");
-	//print_stack(root_b);
-
-	//print_stack(root_a);
-
-	free_stack(root_a);
-	return (0);
+	if (is_empty(*root))
+		return ;
+	(*root)->stack == 'a' ? write(1, "pb\n", 3) :\
+	write(1, "pa\n", 3);
+	c = (*root)->stack == 'a' ? 'b' : 'a';
+	temp = *root;
+	*root = (*root)->next;
+	push(stack, temp->data, c);
+	free(temp);
 }

@@ -3,18 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/14 11:27:51 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/16 10:46:18 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1 = push_swap
 NAME2 = checker
 
-SRC1 = push_swap_files/push_swap.c push_swap_files/moves.c \
-		push_swap_files/sort_stack.c
+SRC1 = push_swap_files/push_swap.c push_swap_files/push.c \
+		push_swap_files/sort_stack.c push_swap_files/rotate.c \
+		push_swap_files/swap.c
 
 SRC2 = checker_files/checker.c checker_files/read_instructions.c \
 		checker_files/execute_rules.c checker_files/moves.c \

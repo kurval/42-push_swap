@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 20:07:21 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/15 20:28:32 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ void	sort_stack_test(t_stack **root_a, t_stack **root_b)
 		}
     }
 	while (!is_empty(*root_b))
-	{
 		push_ab(root_b, root_a);
-	}
 }
 
 void	sort_stack(t_stack **root_a, t_stack **root_b)
