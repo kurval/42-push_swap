@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 11:30:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 19:56:07 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static int	cmp(int value1, int value2)
 void		error_check(int arg, char **argc)
 {
 	if (arg == 1)
-	{
-		ft_printf(BOLDRED "Error\n" RESET);
 		exit(0);
-	}
 	while (--arg > 0)
 	{
 		if (ft_atoi(argc[arg]) == -1)
@@ -49,6 +46,7 @@ void		error_doubles(t_stack *lst)
 			if (!cmp(lst->data, future->data))
 			{
 				ft_printf(BOLDRED "Error\n" RESET);
+				free_stack(lst);
 				exit(0);
 			}
 			future = future->next;

@@ -6,7 +6,7 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 16:57:02 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/16 13:24:22 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/16 19:43:00 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = lib.a
 
 SRC = error_check.c push.c print_stack.c \
 	rotate.c swap.c rev_rotate.c swap.c \
-	helper_functions.c
+	helper_functions.c free_rules.c
 
 HEADERS = lib.h
 

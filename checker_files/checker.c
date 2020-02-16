@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 17:33:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 19:56:34 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,17 @@ int	main(int arg, char **argc)
 
 	root_a = NULL;
 	root_b = NULL;
-	if (arg == 1)
-		return (0);
 	error_check(arg, argc);
 	while (--arg)
 		push(&root_a, ft_atoi(argc[arg]), '-');
 	error_doubles(root_a);
-	if (!(read_instructions(rules)))
+	if (!read_instructions(rules) || !check_rules(rules))
+	{
+		free_rules(rules);
+		free_stack(root_a);
+		ft_printf(BOLDRED "Error\n" RESET);
 		return (0);
+	}
 	execute_rules(&root_a, &root_b, rules);
 	check_order(root_a, root_b) ? ft_printf(BOLDGREEN "OK\n" RESET) :\
 	ft_printf(BOLDRED "KO\n" RESET);
