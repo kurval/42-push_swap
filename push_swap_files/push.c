@@ -6,11 +6,17 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 10:45:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 12:33:27 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static void	print_push(t_stack *root)
+{
+	root->stack == 'a' ? write(1, "pb\n", 3) :\
+	write(1, "pa\n", 3);
+}
 
 void	push_ab(t_stack **root, t_stack **stack)
 {
@@ -19,8 +25,7 @@ void	push_ab(t_stack **root, t_stack **stack)
 
 	if (is_empty(*root))
 		return ;
-	(*root)->stack == 'a' ? write(1, "pb\n", 3) :\
-	write(1, "pa\n", 3);
+	print_push(*root);
 	c = (*root)->stack == 'a' ? 'b' : 'a';
 	temp = *root;
 	*root = (*root)->next;
