@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 20:05:57 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 12:35:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int arg, char **argc)
 		return (0);
 	error_check(arg, argc);
 	while (--arg)
-		push(&root_a, ft_atoi(argc[arg]), 'a');
+		push(&root_a, ft_atoi(argc[arg]), '-');
 	error_doubles(root_a);
 	if (!(read_instructions(rules)))
 		return (0);

@@ -5,19 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 21:01:29 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 20:08:29 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/16 13:25:58 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "../includes/push_swap.h"
 
-void	push(t_stack **root, int data, char c)
+static void	print_push(t_stack *root)
 {
-	t_stack	*node;
+	if (root->stack == '-' || !root->stack)
+		return ;
+	root->stack == 'a' ? write(1, "pb\n", 3) :\
+	write(1, "pa\n", 3);
+}
 
-	node = new_node(data, c);
-	node->next = *root;
-	node->stack = c;
-	*root = node;
+void	push_ab(t_stack **root, t_stack **stack)
+{
+	t_stack *temp;
+	char c;
+
+	if (is_empty(*root))
+		return ;
+	print_push(*root);
+	if ((*root)->stack == 'a' || (*root)->stack == 'b')
+		c = (*root)->stack == 'a' ? 'b' : 'a';
+	else
+		c = (*root)->stack == '-';
+	temp = *root;
+	*root = (*root)->next;
+	push(stack, temp->data, c);
+	free(temp);
 }

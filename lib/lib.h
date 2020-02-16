@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 10:24:50 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 13:05:19 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,12 @@ void					push(t_stack **root, int data, char c);
 int						is_empty(t_stack *root);
 void					print_stack(t_stack *root);
 void					free_stack(t_stack *root);
+void					push_ab(t_stack **root, t_stack **stack);
+void					swap(t_stack **root);
+void	                swap_both(t_stack **root_a, t_stack **root_b);
+void					reverse_rotate(t_stack **root);
+void	                rev_rotate_both(t_stack **root_a, t_stack **root_b);
+void					rotate(t_stack **root);
+void	                rotate_both(t_stack **root_a, t_stack **root_b);
 
 #endif

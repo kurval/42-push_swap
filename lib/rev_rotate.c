@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 11:51:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/16 13:26:06 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	print_rev_rotate(t_stack *root)
 {
+	if (root->stack == '-' || !root->stack)
+		return ;
 	if (!root->both)
 		root->stack == 'a' ? write(1, "rra\n", 4) :\
 		write(1, "rrb\n", 4);
@@ -32,7 +34,10 @@ void	reverse_rotate(t_stack **root)
 	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
     print_rev_rotate(*root);
-	c = (*root)->stack == 'a' ? 'a' : 'b';
+	if ((*root)->stack == 'a' || (*root)->stack == 'b')
+		c = (*root)->stack == 'a' ? 'a' : 'b';
+	else
+		c = (*root)->stack == '-';
 	second_last = *root;
 	while (second_last->next->next != NULL)
 		second_last = second_last->next;

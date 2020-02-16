@@ -6,20 +6,17 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/16 12:27:17 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/16 13:21:30 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1 = push_swap
 NAME2 = checker
 
-SRC1 = push_swap_files/push_swap.c push_swap_files/push.c \
-		push_swap_files/sort_stack.c push_swap_files/rotate.c \
-		push_swap_files/swap.c push_swap_files/rev_rotate.c
+SRC1 = push_swap_files/push_swap.c push_swap_files/sort_stack.c \
 
 SRC2 = checker_files/checker.c checker_files/read_instructions.c \
-		checker_files/execute_rules.c checker_files/moves.c \
-		checker_files/check_order.c
+		checker_files/execute_rules.c checker_files/check_order.c
 
 OBJ = *.o
 

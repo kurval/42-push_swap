@@ -6,15 +6,15 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 16:57:02 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/13 21:06:07 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/16 13:24:22 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lib.a
 
-SRC = error_check.c free_stack.c free_stack.c \
-	push.c print_stack.c new_node.c is_empty.c \
-	del_node.c
+SRC = error_check.c push.c print_stack.c \
+	rotate.c swap.c rev_rotate.c swap.c \
+	helper_functions.c
 
 HEADERS = lib.h
 
