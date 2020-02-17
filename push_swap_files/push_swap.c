@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/17 18:21:49 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/17 20:02:22 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int arg, char **argc)
 	while (--arg)
 		push(&root_a, ft_atoi(argc[arg]), 'a');
 	error_doubles(root_a);
-
 
 	sort_stack(&root_a, &root_b);
 	//ft_printf("2 round:\n");

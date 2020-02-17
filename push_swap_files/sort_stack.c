@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/17 17:45:35 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/17 20:23:56 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,17 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 {
 	t_stack *current;
 	int		size;
-	int		mid;
 	int		lo;
 
 	current = *root_a;
 	size = 0;
-	mid = 0;
 	lo = (*root_a)->data;
 	while (current)
 	{
-		mid += current->data;
 		lo = current->data < lo ? current->data : lo;
 		current = current->next;
 		size++;
 	}
-	mid /= size;
 	if (size == 2 && (*root_a)->data > (*root_a)->next->data)
 		rotate(root_a);
 	else if (size == 3)

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/17 18:21:29 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/17 20:21:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void	                rev_rotate_both(t_stack **root_a, t_stack **root_b);
 void					rotate(t_stack **root);
 void	                rotate_both(t_stack **root_a, t_stack **root_b);
 void    				free_rules(char **rules);
+int						check_order(t_stack *root_a, t_stack *root_b);
 
 #endif
