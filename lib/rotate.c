@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 23:51:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/17 18:21:01 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ static void	print_rotate(t_stack *root)
 	if (root->stack == '-')
 		return ;
 	if (!root->both)
+	{
 		root->stack == 'a' ? write(1, "ra\n", 3) :\
 		write(1, "rb\n", 3);
+	}
 	else if (root->both == 1)
         write(1, "rr\n", 3);
 }
