@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/15 12:15:52 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/18 11:53:22 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_stack(t_stack *root)
 	current = root;
 	while (current)
 	{
-		ft_printf("%d\n", current->data);
+		ft_printf("%d chunk: %d\n", current->data, current->chunk);
 		current = current->next;
 	}
 }

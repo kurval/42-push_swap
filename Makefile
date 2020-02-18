@@ -6,7 +6,7 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/17 20:22:14 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/18 11:14:29 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME1 = push_swap
 NAME2 = checker
 
 SRC1 = push_swap_files/push_swap.c push_swap_files/sort_stack.c \
-		push_swap_files/sort_three.c push_swap_files/sort_five.c
+		push_swap_files/sort_three.c push_swap_files/sort_five.c \
+		push_swap_files/big_sort.c
 
 SRC2 = checker_files/checker.c checker_files/read_instructions.c \
 		checker_files/execute_rules.c checker_files/check_rules.c
