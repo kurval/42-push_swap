@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/18 11:15:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/18 18:19:08 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 	else if (size == 4 || size == 5)
 		sort_five(root_a, root_b, lo, size);
 	else if (size > 5)
+	{
 		quick_sort(root_a, root_b, size);
+		//sort_stack_test(root_a, root_b);
+	}
 }
