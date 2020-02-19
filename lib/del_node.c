@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   del_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:10:51 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/13 21:02:05 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/14 10:03:27 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-void	print_stack(t_stack *root)
+void	del_node(t_stack **node)
 {
-	t_stack *current;
-
-	current = root;
-	while (current)
+	if (node != NULL && *node != NULL)
 	{
-		//ft_printf("%d chunk: %d\n", current->data, current->chunk);
-		ft_printf("%d\n", current->data);
-		current = current->next;
+		free(*node);
+		*node = NULL;
 	}
 }

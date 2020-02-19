@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:59:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/14 12:05:19 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 12:41:42 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	read_instructions(char **rules)
 		rules[nbr++] = str;
 		free(buff);
 	}
-	rules[nbr] = NULL;
+	rules[nbr] = 0;
 	if (ret == -1)
 		return (0);
 	return (1);

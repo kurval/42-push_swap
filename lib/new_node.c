@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   new_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:10:51 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/13 21:01:51 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/14 10:08:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-void	print_stack(t_stack *root)
+t_stack	*new_node(int data)
 {
-	t_stack *current;
+	t_stack *new_node;
 
-	current = root;
-	while (current)
-	{
-		//ft_printf("%d chunk: %d\n", current->data, current->chunk);
-		ft_printf("%d\n", current->data);
-		current = current->next;
-	}
+	new_node = (t_stack*)malloc(sizeof(t_stack));
+	new_node->data = data;
+	new_node->next = NULL;
+	return (new_node);
 }

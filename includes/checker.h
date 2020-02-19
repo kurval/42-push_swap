@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:25:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/17 20:21:29 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 12:41:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
-# define MAX 4000
+# define MAX 10000
 
 # include "../libft/libft.h"
 # include "../lib/lib.h"

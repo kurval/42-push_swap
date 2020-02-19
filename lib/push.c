@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 17:38:51 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 11:02:31 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static void	print_push(t_stack *root)
 	write(1, "pa\n", 3);
 }
 
-void	push_ab(t_stack **root, t_stack **stack)
+void		push_ab(t_stack **root, t_stack **stack)
 {
 	t_stack *temp;
-	char c;
+	char	c;
 
 	if (is_empty(*root))
 		return ;

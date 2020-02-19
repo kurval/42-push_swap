@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   calc_mid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:10:51 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/19 15:23:07 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "../includes/checker.h"
 
-void	print_stack(t_stack *root)
+int		calc_mid(t_stack **root_a)
 {
-	t_stack *current;
+    t_stack *current;
+	int		size;
+	int		mid;
 
-	current = root;
+	current = *root_a;
+	size = 0;
+	mid = (*root_a)->data;
 	while (current)
 	{
-		//ft_printf("%d chunk: %d\n", current->data, current->chunk);
-		ft_printf("%d\n", current->data);
+		mid += current->data;
 		current = current->next;
+		size++;
 	}
+	mid /= size;
+    return (mid);
 }

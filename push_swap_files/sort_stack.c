@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/18 20:23:06 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 16:11:01 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	sort_stack_test(t_stack **root_a, t_stack **root_b)
 {
-	int tmp = (*root_a)->data; 
+	int tmp;
+
+	tmp = (*root_a)->data;
 	push_ab(root_a, root_b);
-	while (!is_empty(*root_a)) 
-    {
+	while (!is_empty(*root_a))
+	{
 		tmp = (*root_a)->data;
-        if (tmp > (*root_b)->data)
-            push_ab(root_a, root_b);
+		if (tmp > (*root_b)->data)
+			push_ab(root_a, root_b);
 		else
 		{
 			rotate(root_a);
@@ -29,7 +31,7 @@ void	sort_stack_test(t_stack **root_a, t_stack **root_b)
 			reverse_rotate(root_a);
 			push_ab(root_a, root_b);
 		}
-    }
+	}
 	while (!is_empty(*root_b))
 		push_ab(root_b, root_a);
 }
@@ -39,16 +41,20 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 	t_stack *current;
 	int		size;
 	int		lo;
+	int		mid;
 
 	current = *root_a;
 	size = 0;
 	lo = (*root_a)->data;
+	mid = (*root_a)->data;
 	while (current)
 	{
+		mid += current->data;
 		lo = current->data < lo ? current->data : lo;
 		current = current->next;
 		size++;
 	}
+	mid /= size;
 	if (size == 2 && (*root_a)->data > (*root_a)->next->data)
 		rotate(root_a);
 	else if (size == 3)
@@ -57,7 +63,7 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 		sort_five(root_a, root_b, lo, size);
 	else if (size > 5)
 	{
-		quick_sort(root_a, root_b, size);
+		quick_sort(root_a, root_b, size, mid);
 		//sort_stack_test(root_a, root_b);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 23:53:15 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 11:19:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ static void	print_rev_rotate(t_stack *root)
 		root->stack == 'a' ? write(1, "rra\n", 4) :\
 		write(1, "rrb\n", 4);
 	else
-    {
-        root->both == 1 ? write(1, "rrr\n", 4) : 0;
-        root->both = 0;
-    }
+	{
+		root->both == 1 ? write(1, "rrr\n", 4) : 0;
+		root->both = 0;
+	}
 }
 
-void	reverse_rotate(t_stack **root)
+void		reverse_rotate(t_stack **root)
 {
 	t_stack *second_last;
 	char	c;
 
 	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
-    print_rev_rotate(*root);
+	print_rev_rotate(*root);
 	if ((*root)->stack == 'a' || (*root)->stack == 'b')
 		c = (*root)->stack == 'a' ? 'a' : 'b';
 	else
@@ -45,10 +45,10 @@ void	reverse_rotate(t_stack **root)
 	del_node(&second_last->next);
 }
 
-void	rev_rotate_both(t_stack **root_a, t_stack **root_b)
+void		rev_rotate_both(t_stack **root_a, t_stack **root_b)
 {
 	if (is_empty(*root_a) || is_empty((*root_a)->next) ||\
-	is_empty(*root_b) || is_empty((*root_b)->next))
+			is_empty(*root_b) || is_empty((*root_b)->next))
 		return ;
 	(*root_a)->both = 1;
 	(*root_b)->both = 2;

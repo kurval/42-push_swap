@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   check_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:10:51 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/13 20:22:38 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/14 09:52:59 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "../includes/checker.h"
 
-void	print_stack(t_stack *root)
+int		check_order(t_stack *root_a, t_stack *root_b)
 {
-	t_stack *current;
+	t_stack *future;
 
-	current = root;
-	while (current)
+	if (!(is_empty(root_b)))
+		return (0);
+	while (root_a)
 	{
-		//ft_printf("%d chunk: %d\n", current->data, current->chunk);
-		ft_printf("%d\n", current->data);
-		current = current->next;
+		future = root_a->next;
+		while (future)
+		{
+			if (root_a->data > future->data)
+				return (0);
+			future = future->next;
+		}
+		root_a = root_a->next;
 	}
+	return (1);
 }

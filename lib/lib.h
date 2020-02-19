@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/18 12:47:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 15:24:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_H
 # define LIB_H
 # define RESET   "\033[0m"
-# define BLACK   "\033[30m"      /* Black */
-# define RED     "\033[31m"      /* Red */
-# define GREEN   "\033[32m"      /* Green */
-# define YELLOW  "\033[33m"      /* Yellow */
-# define BLUE    "\033[34m"      /* Blue */
-# define MAGENTA "\033[35m"      /* Magenta */
-# define CYAN    "\033[36m"      /* Cyan */
-# define WHITE   "\033[37m"      /* White */
-# define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
-# define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
-# define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-# define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
-# define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-# define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
-# define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-# define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+# define BLACK   "\033[30m"
+# define RED     "\033[31m"
+# define GREEN   "\033[32m"
+# define YELLOW  "\033[33m"
+# define BLUE    "\033[34m"
+# define MAGENTA "\033[35m"
+# define CYAN    "\033[36m"
+# define WHITE   "\033[37m"
+# define BOLDBLACK   "\033[1m\033[30m"
+# define BOLDRED     "\033[1m\033[31m"
+# define BOLDGREEN   "\033[1m\033[32m"
+# define BOLDYELLOW  "\033[1m\033[33m"
+# define BOLDBLUE    "\033[1m\033[34m"
+# define BOLDMAGENTA "\033[1m\033[35m"
+# define BOLDCYAN    "\033[1m\033[36m"
+# define BOLDWHITE   "\033[1m\033[37m"
 
 # include "../libft/libft.h"
 
@@ -52,12 +52,13 @@ void					print_stack(t_stack *root);
 void					free_stack(t_stack *root);
 void					push_ab(t_stack **root, t_stack **stack);
 void					swap(t_stack **root);
-void	                swap_both(t_stack **root_a, t_stack **root_b);
+void					swap_both(t_stack **root_a, t_stack **root_b);
 void					reverse_rotate(t_stack **root);
-void	                rev_rotate_both(t_stack **root_a, t_stack **root_b);
+void					rev_rotate_both(t_stack **root_a, t_stack **root_b);
 void					rotate(t_stack **root);
-void	                rotate_both(t_stack **root_a, t_stack **root_b);
-void    				free_rules(char **rules);
+void					rotate_both(t_stack **root_a, t_stack **root_b);
+void					free_rules(char **rules);
 int						check_order(t_stack *root_a, t_stack *root_b);
+int						calc_mid(t_stack **root_a);
 
 #endif

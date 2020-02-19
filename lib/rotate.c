@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/17 18:21:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 11:20:00 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void	print_rotate(t_stack *root)
 		write(1, "rb\n", 3);
 	}
 	else if (root->both == 1)
-        write(1, "rr\n", 3);
+		write(1, "rr\n", 3);
 }
 
-void	rotate(t_stack **root)
+void		rotate(t_stack **root)
 {
 	int		first;
 	char	c;
@@ -34,7 +34,7 @@ void	rotate(t_stack **root)
 
 	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
-    print_rotate(*root);
+	print_rotate(*root);
 	if ((*root)->stack == 'a' || (*root)->stack == 'b')
 		c = (*root)->stack == 'a' ? 'a' : 'b';
 	else
@@ -50,10 +50,10 @@ void	rotate(t_stack **root)
 	temp->next = last;
 }
 
-void	rotate_both(t_stack **root_a, t_stack **root_b)
+void		rotate_both(t_stack **root_a, t_stack **root_b)
 {
 	if (is_empty(*root_a) || is_empty((*root_a)->next) ||\
-	is_empty(*root_b) || is_empty((*root_b)->next))
+			is_empty(*root_b) || is_empty((*root_b)->next))
 		return ;
 	(*root_a)->both = 1;
 	(*root_b)->both = 2;

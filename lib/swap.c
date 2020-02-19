@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:44:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/16 23:53:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 11:19:17 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	print_swap(t_stack *root)
 		write(1, "sb\n", 3);
 	else
 	{
-        root->both == 1 ? write(1, "ss\n", 3) : 0;
-        root->both = 0;
-    }
+		root->both == 1 ? write(1, "ss\n", 3) : 0;
+		root->both = 0;
+	}
 }
 
-void	swap(t_stack **root)
+void		swap(t_stack **root)
 {
 	int temp;
 
@@ -38,10 +38,10 @@ void	swap(t_stack **root)
 	(*root)->next->data = temp;
 }
 
-void	swap_both(t_stack **root_a, t_stack **root_b)
+void		swap_both(t_stack **root_a, t_stack **root_b)
 {
 	if (is_empty(*root_a) || is_empty((*root_a)->next) ||\
-	is_empty(*root_b) || is_empty((*root_b)->next))
+			is_empty(*root_b) || is_empty((*root_b)->next))
 		return ;
 	(*root_a)->both = 1;
 	(*root_b)->both = 2;
