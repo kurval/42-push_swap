@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 12:38:58 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 21:59:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int arg, char **argc)
 {
 	t_stack	*root_a;
 	t_stack	*root_b;
-	char	*rules[MAX];
+	t_rules	*rules_lst;
 	//int i = 0;
 
 	root_a = NULL;
@@ -25,14 +25,14 @@ int	main(int arg, char **argc)
 	while (--arg)
 		push(&root_a, ft_atoi(argc[arg]), '-');
 	error_doubles(root_a);
-	if (!read_instructions(rules) || !check_rules(rules))
+	if (!read_instructions(&rules_lst) || !check_rules(rules_lst))
 	{
-		free_rules(rules);
+		free_rules(rules_lst);
 		free_stack(root_a);
 		ft_printf(BOLDRED "Error\n" RESET);
 		return (0);
 	}
-	execute_rules(&root_a, &root_b, rules);
+	execute_rules(&root_a, &root_b, rules_lst);
 	check_order(root_a, root_b) ? ft_printf(BOLDGREEN "OK\n" RESET) :\
 	ft_printf(BOLDRED "KO\n" RESET);
 	/*

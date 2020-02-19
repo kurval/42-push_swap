@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 16:11:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 19:02:45 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,16 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 	t_stack *current;
 	int		size;
 	int		lo;
-	int		mid;
 
 	current = *root_a;
 	size = 0;
 	lo = (*root_a)->data;
-	mid = (*root_a)->data;
 	while (current)
 	{
-		mid += current->data;
 		lo = current->data < lo ? current->data : lo;
 		current = current->next;
 		size++;
 	}
-	mid /= size;
 	if (size == 2 && (*root_a)->data > (*root_a)->next->data)
 		rotate(root_a);
 	else if (size == 3)
@@ -63,7 +59,7 @@ void	sort_stack(t_stack **root_a, t_stack **root_b)
 		sort_five(root_a, root_b, lo, size);
 	else if (size > 5)
 	{
-		quick_sort(root_a, root_b, size, mid);
+		quick_sort(root_a, root_b, size);
 		//sort_stack_test(root_a, root_b);
 	}
 }

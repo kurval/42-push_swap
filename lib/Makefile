@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 16:57:02 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/19 15:23:01 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/02/19 20:37:25 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = lib.a
 
 SRC = error_check.c push.c print_stack.c \
 	rotate.c swap.c rev_rotate.c swap.c calc_mid.c \
-	helper_functions.c free_rules.c check_order.c
+	helper_functions.c rules.c check_order.c
 
 HEADERS = lib.h
 

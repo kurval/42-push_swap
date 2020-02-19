@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 15:24:43 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/19 21:24:10 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ typedef struct			s_stack
 	int					tag;
 }						t_stack;
 
+typedef struct			s_rules
+{
+	char				data[4];
+	struct s_rules		*next;
+}						t_rules;
+
 void					error_check(int arg, char **argc);
 void					error_doubles(t_stack *lst);
 t_stack					*new_node(int data, char c);
@@ -57,8 +63,11 @@ void					reverse_rotate(t_stack **root);
 void					rev_rotate_both(t_stack **root_a, t_stack **root_b);
 void					rotate(t_stack **root);
 void					rotate_both(t_stack **root_a, t_stack **root_b);
-void					free_rules(char **rules);
 int						check_order(t_stack *root_a, t_stack *root_b);
 int						calc_mid(t_stack **root_a);
+t_rules					*new_rule(char *data);
+void					push_rules(t_rules **rules, char *data);
+void					free_rules(t_rules *rules);
+void					print_rules(t_rules *rules);
 
 #endif
