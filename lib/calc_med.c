@@ -6,15 +6,23 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 17:03:10 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 21:35:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
+static void	ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 static int sort_list(int *tab, unsigned int size)
 {
-	int				tmp;
 	unsigned int 	i;
 	unsigned int 	j;
 	int				med;
@@ -26,16 +34,15 @@ static int sort_list(int *tab, unsigned int size)
 		while (j < size)
 		{
 			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
+				ft_swap(&tab[i], &tab[j]);
 			j += 1;
 		}
 		i += 1;
 	}
-	med = tab[size/2];
+	if (size % 2 != 0)
+		med = tab[size/2];
+	else
+		med = ((tab[(size/2) - 1] + tab[(size/2)]) / 2);
 	return (med);
 }
 

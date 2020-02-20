@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 20:00:33 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 22:10:10 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 			rotate(root_a);
 	}
 	!(*root_a)->med ? (*root_b)->tag = 1 : 0;
-	push_ab(root_a, root_b);
+	!(*root_a)->med ? push_ab(root_a, root_b) : 0;
 	*size -= 1;
 	(*root_b)->chunk = partition;
 }
@@ -72,7 +72,7 @@ void		quick_sort(t_stack **root_a, t_stack **root_b, int size)
 	int mid;
 
 	chunk = 0;
-	mid = calc_mid(*root_a);
+	mid = calc_med(*root_a, size);
 	while (!is_empty(*root_a) && size > 3)
 	{
 		chunk += 1;
