@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 21:24:10 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 18:58:47 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct			s_stack
 	int					both;
 	int					chunk;
 	int					tag;
+	int					med;
 }						t_stack;
 
 typedef struct			s_rules
@@ -64,10 +65,11 @@ void					rev_rotate_both(t_stack **root_a, t_stack **root_b);
 void					rotate(t_stack **root);
 void					rotate_both(t_stack **root_a, t_stack **root_b);
 int						check_order(t_stack *root_a, t_stack *root_b);
-int						calc_mid(t_stack **root_a);
+int						calc_mid(t_stack *root_a);
 t_rules					*new_rule(char *data);
 void					push_rules(t_rules **rules, char *data);
 void					free_rules(t_rules *rules);
 void					print_rules(t_rules *rules);
-
+int						check_rev_order(t_stack *root_b);
+int						calc_med(t_stack *root_a, int size);
 #endif

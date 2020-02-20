@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/18 18:28:17 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 18:41:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int arg, char **argc)
 	//print_stack(root_b);
 	
 	//print_stack(root_a);
-
 	free_stack(root_a);
 	return (0);
 }
