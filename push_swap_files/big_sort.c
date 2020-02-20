@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 19:02:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 10:55:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 static void	move_b(t_stack **root_a, t_stack **root_b)
 {
 	int tmp;
+	int pivot;
 
 	tmp = (*root_b)->data;
 	while ((*root_b)->tag)
 		push_ab(root_b, root_a);
-	while (!is_empty(*root_b))
+	pivot = (*root_b)->data;
+	rotate(root_b);
+	while ((*root_a)->data != pivot)
 	{
 		tmp = (*root_b)->data;
-		if (tmp < (*root_a)->data)
+		if (tmp < (*root_a)->data && tmp > pivot)
 			push_ab(root_b, root_a);
+		else if (tmp < pivot)
+			rotate(root_b);
 		else
 		{
 			rotate(root_b);
@@ -33,17 +38,16 @@ static void	move_b(t_stack **root_a, t_stack **root_b)
 			push_ab(root_b, root_a);
 		}
 	}
+	push_ab(root_b, root_a);
 }
 
 static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 		int pivot, int *size, int partition)
 {
 	int round;
-	int b;
 	
 	round = (*root_a)->data;
 	rotate(root_a);
-	b = 0;
 	while ((*root_a)->data != round)
 	{
 		if ((*root_a)->data < pivot)
@@ -51,7 +55,6 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 			push_ab(root_a, root_b);
 			(*root_b)->chunk = partition;
 			*size -= 1;
-			b++;
 		}
 		else
 			rotate(root_a);
@@ -82,5 +85,6 @@ void		quick_sort(t_stack **root_a, t_stack **root_b, int size)
 		sort_three(root_a);
 	else if (size == 2)
 		((*root_a)->data > (*root_a)->next->data) ? swap(root_a) : 0;
-	move_b(root_a, root_b);
+	while (!is_empty(*root_b))
+		move_b(root_a, root_b);
 }
