@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 19:58:25 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/20 20:00:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	move_b(t_stack **root_a, t_stack **root_b)
 			push_ab(root_b, root_a);
 		else if (tmp < pivot)
 			rotate(root_b);
-		else
+		else if (tmp > (*root_a)->data)
 		{
 			rotate(root_b);
 			while ((*root_a) && tmp > (*root_a)->data)
