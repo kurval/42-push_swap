@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 11:46:49 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/21 13:45:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	move_b(t_stack **root_a, t_stack **root_b, int *tab)
 {
 	int tmp;
 
+	ft_printf("shortest way for %d on %d\n", tab[9], shortest_way(*root_b, tab[9]));
 	tmp = (*root_b)->data;
 	push_ab(root_b, root_a);
 	(*root_a)->sort = 1;
@@ -68,8 +69,10 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 	tab = calc_med(*root_a, size, &mid);
 	move_partitions(root_a, root_b, mid);
 
+	ft_printf("b on: \n");
+	print_stack(*root_b);
 	move_b(root_a, root_b, tab);
-	print_stack(*root_a);
+	
 	while (i < size)
 	{
 		ft_printf("%d", tab[i]);
