@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 21:35:26 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/21 10:55:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ static void	ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-static int sort_list(int *tab, unsigned int size)
+static void sort_list(int *tab, unsigned int size, int *med)
 {
 	unsigned int 	i;
 	unsigned int 	j;
-	int				med;
 
 	i = 0;
 	while (i < size - 1)
@@ -40,21 +39,18 @@ static int sort_list(int *tab, unsigned int size)
 		i += 1;
 	}
 	if (size % 2 != 0)
-		med = tab[size/2];
+		*med = tab[size/2];
 	else
-		med = ((tab[(size/2) - 1] + tab[(size/2)]) / 2);
-	return (med);
+		*med = ((tab[(size/2) - 1] + tab[(size/2)]) / 2);
 }
 
-int	calc_med(t_stack *root_a, int size)
+int	*calc_med(t_stack *root_a, int size, int *med)
 {
     t_stack *current;
 	int		*tab;
 	int		i;
-	int		med;
 
 	current = root_a;
-	med = 0;
 	i = 0;
 	if (!(tab = (int*)malloc(sizeof(int) * size + 1)))
 		return (0);
@@ -64,7 +60,6 @@ int	calc_med(t_stack *root_a, int size)
 		current = current->next;
 		i++;
 	}
-	med = sort_list(tab, size);
-	free(tab);
-    return (med);
+	sort_list(tab, size, med);
+    return (tab);
 }

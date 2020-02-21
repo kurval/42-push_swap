@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 13:25:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 18:59:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/21 11:24:23 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	*new_node(int data, char c)
 	new_node->both = 0;
 	new_node->chunk = 0;
 	new_node->tag = 0;
+	new_node->sort = 0;
 	new_node->med = 0;
 	new_node->next = NULL;
 	return (new_node);
