@@ -6,18 +6,24 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 15:48:03 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/21 17:27:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+
 static void	move_b(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 {
 	int way;
+	int len;
 
-	way = shortest_way(*root_b, tab[*size - 1]);
-	while ((*root_b)->data != tab[*size - 1])
+	if (*size < 0)
+		len = -*size;
+	else
+		len = *size;
+	way = shortest_way(*root_b, tab[len]);
+	while ((*root_b)->data != tab[len])
 	{
 		if (way < 0	)
 			reverse_rotate(root_b);
@@ -45,6 +51,8 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 		else
 			rotate(root_a);
 	}
+	if ((*root_a)->data > pivot)
+		push_ab(root_a, root_b);
 }
 
 void		big_sort(t_stack **root_a, t_stack **root_b, int size)
@@ -57,18 +65,15 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 	i = 0;
 	mid = 0;
 	tab = calc_med(*root_a, size, &mid);
-	len = size;
+	len = size -1;
 	move_partitions(root_a, root_b, mid);
-
-	ft_printf("b on: \n");
-	print_stack(*root_b);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
-	while (i < size)
+	while (len >= 0)
 	{
-		ft_printf("%d", tab[i]);
-		i++;
+		move_b(root_b, root_a, tab, &i);
+		len--;
 	}
-	ft_printf("a on: \n");
-	print_stack(*root_a);
+	while (!is_empty(*root_b))
+		push_ab(root_b, root_a);
 }
