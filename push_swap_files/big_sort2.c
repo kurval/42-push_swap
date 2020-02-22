@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/22 11:59:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/22 13:59:57 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,13 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 		int pivot)
 {
 	int round;
-	int med;
 	
 	round = (*root_a)->data;
-	med = pivot/2;
 	rotate(root_a);
 	while ((*root_a)->data != round)
 	{
 		if ((*root_a)->data > pivot)
-		{
 			push_ab(root_a, root_b);
-			if ((*root_b)->data < med)
-				rotate(root_b);
-		}
 		else
 			rotate(root_a);
 	}
