@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/22 14:58:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/22 16:59:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 static void	move_a(t_stack **root_a, t_stack **root_b, int *tab, int *size, int mid)
 {
 	int len = *size;
-	int med = mid/2;
 	while (len >= 0)
 	{
 		reverse_rotate(root_a);
 		if ((*root_a)->data != tab[*size])
 		{
 			push_ab(root_a, root_b);
-			if ((*root_b)->data < med)
+			if ((*root_b)->data < mid)
 				rotate(root_b);
 		}
 		else
@@ -54,7 +53,7 @@ static void	move_b(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 }
 
 static void	move_partitions(t_stack **root_a, t_stack **root_b,\
-		int pivot)
+		int pivot, int mid2)
 {
 	int round;
 	
@@ -63,7 +62,11 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 	while ((*root_a)->data != round)
 	{
 		if ((*root_a)->data > pivot)
+		{
 			push_ab(root_a, root_b);
+			if ((*root_b)->data < mid2)
+				rotate(root_b);
+		}
 		else
 			rotate(root_a);
 	}
@@ -77,15 +80,18 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 	int	*tab;
 	int len;
 	int i;
+	int mid2;
 
 	mid = 0;
 	tab = calc_med(*root_a, size, &mid);
+	mid2 = tab[(size/4) * 3];
 	len = size -1;
 	i = 0;
-	move_partitions(root_a, root_b, mid);
+	move_partitions(root_a, root_b, mid, mid2);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
-	move_a(root_a, root_b, tab, &len, mid);
+	mid2 = tab[(size/4)];
+	move_a(root_a, root_b, tab, &len, mid2);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
 }

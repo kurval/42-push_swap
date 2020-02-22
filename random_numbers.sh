@@ -5,7 +5,7 @@
 # $> sh run.sh -4 32	-> -4..32
 
 MIN="1";
-MAX="100";
+MAX="500";
 TMPFILE="/tmp/push_swap.res";
 
 case $# in 	# $# -> argc
