@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 10:55:30 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/22 19:11:41 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-static void sort_list(int *tab, unsigned int size, int *med)
+static void sort_list(int *tab, unsigned int size)
 {
 	unsigned int 	i;
 	unsigned int 	j;
@@ -38,13 +38,9 @@ static void sort_list(int *tab, unsigned int size, int *med)
 		}
 		i += 1;
 	}
-	if (size % 2 != 0)
-		*med = tab[size/2];
-	else
-		*med = ((tab[(size/2) - 1] + tab[(size/2)]) / 2);
 }
 
-int	*calc_med(t_stack *root_a, int size, int *med)
+int		*sort_tab(t_stack *root_a, int size)
 {
     t_stack *current;
 	int		*tab;
@@ -60,6 +56,6 @@ int	*calc_med(t_stack *root_a, int size, int *med)
 		current = current->next;
 		i++;
 	}
-	sort_list(tab, size, med);
+	sort_list(tab, size);
     return (tab);
 }
