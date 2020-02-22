@@ -3,15 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 17:27:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/22 11:59:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+static void	move_a(t_stack **root_a, t_stack **root_b, int *tab, int *size, int mid)
+{
+	int len = *size;
+	int med = mid/2;
+	while (len >= 0)
+	{
+		reverse_rotate(root_a);
+		if ((*root_a)->data != tab[*size])
+		{
+			push_ab(root_a, root_b);
+			if ((*root_b)->data < med)
+				rotate(root_b);
+		}
+		else
+			*size -= 1;
+		len--;
+	}
+}
 
 static void	move_b(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 {
@@ -39,14 +57,18 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 		int pivot)
 {
 	int round;
+	int med;
 	
 	round = (*root_a)->data;
+	med = pivot/2;
 	rotate(root_a);
 	while ((*root_a)->data != round)
 	{
 		if ((*root_a)->data > pivot)
 		{
 			push_ab(root_a, root_b);
+			if ((*root_b)->data < med)
+				rotate(root_b);
 		}
 		else
 			rotate(root_a);
@@ -59,21 +81,17 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 {
 	int mid;
 	int	*tab;
-	int i;
 	int len;
+	int i;
 
-	i = 0;
 	mid = 0;
 	tab = calc_med(*root_a, size, &mid);
 	len = size -1;
+	i = 0;
 	move_partitions(root_a, root_b, mid);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
-	while (len >= 0)
-	{
-		move_b(root_b, root_a, tab, &i);
-		len--;
-	}
+	move_a(root_a, root_b, tab, &len, mid);
 	while (!is_empty(*root_b))
-		push_ab(root_b, root_a);
+		move_b(root_a, root_b, tab, &len);
 }
