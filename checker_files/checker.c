@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 17:27:59 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 11:33:58 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int arg, char **argc)
 	root_b = NULL;
 	error_check(arg, argc);
 	while (--arg)
-		push(&root_a, ft_atoi(argc[arg]), '-');
+		push(&root_a, ft_atoi(argc[arg]), '-', 0);
 	error_doubles(root_a);
 	if (!read_instructions(&rules_lst) || !check_rules(rules_lst))
 	{

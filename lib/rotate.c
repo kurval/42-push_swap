@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 21:31:43 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 11:31:02 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void		rotate(t_stack **root)
 {
 	int		first;
 	char	c;
+	int		s;
 	t_stack *last;
 	t_stack *temp;
 
@@ -39,8 +40,9 @@ void		rotate(t_stack **root)
 		c = (*root)->stack == 'a' ? 'a' : 'b';
 	else
 		c = '-';
+	s = (*root)->sort ? 1 : 0;
 	first = (*root)->data;
-	last = new_node(first, c);
+	last = new_node(first, c, s);
 	temp = *root;
 	*root = (*root)->next;
 	free(temp);

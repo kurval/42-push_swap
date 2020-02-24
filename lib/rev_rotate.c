@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:19:43 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 14:28:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void		reverse_rotate(t_stack **root)
 {
 	t_stack *second_last;
 	char	c;
+	int		s;
 
 	if (is_empty(*root) || is_empty((*root)->next))
 		return ;
@@ -41,7 +42,8 @@ void		reverse_rotate(t_stack **root)
 	second_last = *root;
 	while (second_last->next->next != NULL)
 		second_last = second_last->next;
-	push(root, second_last->next->data, c);
+	s = second_last->next->sort ? 1 : 0;
+	push(root, second_last->next->data, c, s);
 	del_node(&second_last->next);
 }
 

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 10:18:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:02:31 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 11:33:05 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void		push_ab(t_stack **root, t_stack **stack)
 {
 	t_stack *temp;
 	char	c;
+	int		s;
 
 	if (is_empty(*root))
 		return ;
@@ -32,8 +33,9 @@ void		push_ab(t_stack **root, t_stack **stack)
 		c = (*root)->stack == 'a' ? 'b' : 'a';
 	else
 		c = '-';
+	s = (*root)->sort ? 1 : 0;
 	temp = *root;
 	*root = (*root)->next;
-	push(stack, temp->data, c);
+	push(stack, temp->data, c, s);
 	free(temp);
 }

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 13:25:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 11:24:23 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 11:30:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		is_empty(t_stack *root)
 	return (!root);
 }
 
-t_stack	*new_node(int data, char c)
+t_stack	*new_node(int data, char c, int s)
 {
 	t_stack *new_node;
 
@@ -36,7 +36,7 @@ t_stack	*new_node(int data, char c)
 	new_node->both = 0;
 	new_node->chunk = 0;
 	new_node->tag = 0;
-	new_node->sort = 0;
+	new_node->sort = s;
 	new_node->med = 0;
 	new_node->next = NULL;
 	return (new_node);
@@ -57,12 +57,11 @@ void	free_stack(t_stack *root)
 	}
 }
 
-void	push(t_stack **root, int data, char c)
+void	push(t_stack **root, int data, char c, int s)
 {
 	t_stack	*node;
 
-	node = new_node(data, c);
+	node = new_node(data, c, s);
 	node->next = *root;
-	node->stack = c;
 	*root = node;
 }

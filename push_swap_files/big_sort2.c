@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/22 21:47:48 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:54:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,9 @@ static void	move_a(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 static void	move_b(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 {
 	int way;
-	int len;
 
-	if (*size < 0)
-		len = -*size;
-	else
-		len = *size;
-	way = shortest_way(*root_b, tab[len]);
-	while ((*root_b)->data != tab[len])
+	way = shortest_way(*root_b, tab[*size]);
+	while ((*root_b)->data != tab[*size])
 	{
 		if (way < 0	)
 			reverse_rotate(root_b);
@@ -57,12 +52,13 @@ static void	move_partitions(t_stack **root_a, t_stack **root_b,\
 	rotate(root_a);
 	while ((*root_a)->data != round)
 	{
-		if ((*root_a)->data >= pivot)
+		if ((*root_a)->data <= pivot)
 			push_ab(root_a, root_b);
+		
 		else
 			rotate(root_a);
 	}
-	if ((*root_a)->data >= pivot)
+	if ((*root_a)->data <= pivot)
 		push_ab(root_a, root_b);
 }
 
@@ -76,12 +72,14 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 	mid = 0;
 	tab = sort_tab(*root_a, size);
 	len = size -1;
-	round = 9;
-	while (!is_empty(*root_a) && round >= 0)
+	round = 1;
+	while (!is_empty(*root_a) && round <= 10)
 	{
 		mid = tab[(size/10) * round];
+		if (round == 10)
+			mid = tab[len];
 		move_partitions(root_a, root_b, mid);
-		round--;
+		round++;
 	}
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);

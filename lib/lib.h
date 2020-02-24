@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/22 19:12:05 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/24 11:28:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ typedef struct			s_rules
 
 void					error_check(int arg, char **argc);
 void					error_doubles(t_stack *lst);
-t_stack					*new_node(int data, char c);
+t_stack					*new_node(int data, char c, int sort);
 void					del_node(t_stack **node);
-void					push(t_stack **root, int data, char c);
+void					push(t_stack **root, int data, char c, int sort);
 int						is_empty(t_stack *root);
 void					print_stack(t_stack *root);
 void					free_stack(t_stack *root);
