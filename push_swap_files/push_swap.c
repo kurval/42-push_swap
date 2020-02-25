@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/24 11:29:04 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:16:57 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,7 @@ int	main(int arg, char **argc)
 	while (--arg)
 		push(&root_a, ft_atoi(argc[arg]), 'a', 0);
 	error_doubles(root_a);
-
 	sort_stack(&root_a, &root_b);
-	//ft_printf("2 round:\n");
-	
-	//ft_printf("stack a:\n");
-	//print_stack(root_a);
-
-	//ft_printf("stack b:\n");
-	//print_stack(root_b);
-	
-	//print_stack(root_a);
 	free_stack(root_a);
 	return (0);
 }

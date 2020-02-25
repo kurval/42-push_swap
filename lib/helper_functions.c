@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helper_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 13:25:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/24 11:30:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:42:59 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ t_stack	*new_node(int data, char c, int s)
 	new_node->data = data;
 	new_node->stack = c;
 	new_node->both = 0;
-	new_node->chunk = 0;
-	new_node->tag = 0;
 	new_node->sort = s;
-	new_node->med = 0;
 	new_node->next = NULL;
 	return (new_node);
 }

@@ -3,89 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/21 11:20:23 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:41:10 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	move_b(t_stack **root_a, t_stack **root_b)
+static void	move_b(t_stack **root_a, t_stack **root_b, int *tab, int *size)
 {
-	int tmp;
-	int pivot;
+	int way;
 
-	tmp = (*root_b)->data;
-	while ((*root_b)->tag)
-		push_ab(root_b, root_a);
-	pivot = (*root_b)->data;
-	rotate(root_b);
-	while ((*root_a) && (*root_b)->data != pivot)
+	way = shortest_way(*root_b, tab[*size]);
+	while ((*root_b)->data != tab[*size])
 	{
-		tmp = (*root_b)->data;
-		if (tmp < (*root_a)->data && tmp > pivot)
-			push_ab(root_b, root_a);
-		else if (tmp < pivot)
-			rotate(root_b);
-		else if (tmp > (*root_a)->data)
+		if ((*root_b)->next)
 		{
-			rotate(root_b);
-			while ((*root_a) && tmp > (*root_a)->data)
-				push_ab(root_a, root_b);
-			reverse_rotate(root_b);
-			push_ab(root_b, root_a);
+			if ((*root_b)->next->data == tab[*size])
+			{
+				swap(root_b);
+				break ;
+			}
 		}
+		if (way < 0)
+			reverse_rotate(root_b);
+		else
+			rotate(root_b);
 	}
+	*size -= 1;
 	push_ab(root_b, root_a);
 }
 
 static void	move_partitions(t_stack **root_a, t_stack **root_b,\
-		int pivot, int *size, int partition)
+		int pivot, int pos)
 {
 	int round;
-	
+
 	round = (*root_a)->data;
+	pos = pivot - pos;
 	rotate(root_a);
-	while ((*root_a)->data != round)
+	while ((*root_a)->data != round && pos > 0)
 	{
-		if ((*root_a)->data < pivot)
+		if ((*root_a)->data <= pivot)
 		{
 			push_ab(root_a, root_b);
-			(*root_b)->chunk = partition;
-			*size -= 1;
+			pos--;
 		}
 		else
 			rotate(root_a);
 	}
-	!(*root_a)->med ? push_ab(root_a, root_b) : 0;
-	!(*root_a)->med ? (*root_b)->tag = 1 : 0;
-	*size -= 1;
-	(*root_b)->chunk = partition;
+	if ((*root_a)->data <= pivot)
+		push_ab(root_a, root_b);
 }
 
-void		quick_sort(t_stack **root_a, t_stack **root_b, int size)
+void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 {
-	int pivot;
-	int chunk;
 	int mid;
+	int	*tab;
+	int len;
+	int round;
+	int pos;
 
-	chunk = 0;
-	mid = calc_mid(*root_a);
-	while (!is_empty(*root_a) && size > 3)
+	mid = 0;
+	tab = sort_tab(*root_a, size);
+	len = size - 1;
+	round = 1;
+	while (!is_empty(*root_a) && round <= 10)
 	{
-		chunk += 1;
-		pivot = (mid) ? mid : (*root_a)->data;
-		mid ? (*root_a)->med = 1 : 0;
-		move_partitions(root_a, root_b, pivot, &size, chunk);
-		mid = 0;
+		mid = (round == 10) ? tab[len] : tab[(size / 10) * round];
+		move_partitions(root_a, root_b, mid, pos);
+		pos = mid;
+		round++;
 	}
-	if (size == 3)
-		sort_three(root_a);
-	else if (size == 2)
-		((*root_a)->data > (*root_a)->next->data) ? swap(root_a) : 0;
-	
 	while (!is_empty(*root_b))
-		move_b(root_a, root_b);
+		move_b(root_a, root_b, tab, &len);
+	free(tab);
 }

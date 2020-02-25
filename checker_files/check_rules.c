@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 19:12:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 20:58:19 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:19:04 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-static int check_rules3(t_rules *rules)
+static int	check_rules3(t_rules *rules)
 {
 	if (ft_strncmp_end(rules->data, "ra", 2) &&\
 			ft_strncmp_end(rules->data, "rb", 2) &&\
@@ -37,7 +37,7 @@ static int	check_rules2(t_rules *rules)
 		return (1);
 }
 
-int		check_rules(t_rules *rules)
+int			check_rules(t_rules *rules)
 {
 	int len;
 

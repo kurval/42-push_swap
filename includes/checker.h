@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:25:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 22:00:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:20:40 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../lib/lib.h"
 
 int		main(int arg, char **argc);
-int     read_instructions(t_rules **rules);
+int		read_instructions(t_rules **rules);
 void	push_ab(t_stack **root, t_stack **stack);
 void	swap(t_stack **root);
 void	reverse_rotate(t_stack **root);

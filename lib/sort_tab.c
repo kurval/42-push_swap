@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/22 19:11:41 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:24:55 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static void	ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-static void sort_list(int *tab, unsigned int size)
+static void	sort_list(int *tab, unsigned int size)
 {
-	unsigned int 	i;
-	unsigned int 	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (i < size - 1)
@@ -40,9 +40,9 @@ static void sort_list(int *tab, unsigned int size)
 	}
 }
 
-int		*sort_tab(t_stack *root_a, int size)
+int			*sort_tab(t_stack *root_a, int size)
 {
-    t_stack *current;
+	t_stack *current;
 	int		*tab;
 	int		i;
 
@@ -57,5 +57,5 @@ int		*sort_tab(t_stack *root_a, int size)
 		i++;
 	}
 	sort_list(tab, size);
-    return (tab);
+	return (tab);
 }

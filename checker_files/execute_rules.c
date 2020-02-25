@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_rules.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 21:21:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:35:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	check_rr(t_stack **root_a, t_stack **root_b, t_rules *rules)
 {
 	!ft_strncmp_end(rules->data, "rra", 3) ? reverse_rotate(root_a) : 0;
 	!ft_strncmp_end(rules->data, "rrb", 3) ? reverse_rotate(root_b) : 0;
-	!ft_strncmp_end(rules->data, "rrr", 3) ? rev_rotate_both(root_a, root_b) : 0;
+	!ft_strncmp_end(rules->data, "rrr", 3) ? rev_rot_both(root_a, root_b) : 0;
 }
 
 static void	check_r(t_stack **root_a, t_stack **root_b, t_rules *rules)

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 19:40:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 21:58:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:25:54 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_rules(t_rules *rules)
 	return (!rules);
 }
 
-void	free_rules(t_rules *rules)
+void		free_rules(t_rules *rules)
 {
 	t_rules *temp;
 
@@ -32,7 +32,7 @@ void	free_rules(t_rules *rules)
 	}
 }
 
-t_rules	*new_rule(char *data)
+t_rules		*new_rule(char *data)
 {
 	t_rules *new_node;
 
@@ -42,7 +42,7 @@ t_rules	*new_rule(char *data)
 	return (new_node);
 }
 
-void	push_rules(t_rules **rules, char *data)
+void		push_rules(t_rules **rules, char *data)
 {
 	t_rules	*node;
 	t_rules *current;
@@ -60,7 +60,7 @@ void	push_rules(t_rules **rules, char *data)
 	current->next = node;
 }
 
-void	print_rules(t_rules *rules)
+void		print_rules(t_rules *rules)
 {
 	t_rules *current;
 

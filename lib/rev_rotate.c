@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/24 14:28:30 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:35:59 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		reverse_rotate(t_stack **root)
 	del_node(&second_last->next);
 }
 
-void		rev_rotate_both(t_stack **root_a, t_stack **root_b)
+void		rev_rot_both(t_stack **root_a, t_stack **root_b)
 {
 	if (is_empty(*root_a) || is_empty((*root_a)->next) ||\
 			is_empty(*root_b) || is_empty((*root_b)->next))

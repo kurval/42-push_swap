@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/24 11:28:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 10:42:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ typedef struct			s_stack
 	struct s_stack		*next;
 	char				stack;
 	int					both;
-	int					chunk;
 	int					sort;
-	int					tag;
-	int					med;
 }						t_stack;
 
 typedef struct			s_rules
@@ -62,11 +59,10 @@ void					push_ab(t_stack **root, t_stack **stack);
 void					swap(t_stack **root);
 void					swap_both(t_stack **root_a, t_stack **root_b);
 void					reverse_rotate(t_stack **root);
-void					rev_rotate_both(t_stack **root_a, t_stack **root_b);
+void					rev_rot_both(t_stack **root_a, t_stack **root_b);
 void					rotate(t_stack **root);
 void					rotate_both(t_stack **root_a, t_stack **root_b);
 int						check_order(t_stack *root_a, t_stack *root_b);
-int						calc_mid(t_stack *root_a);
 t_rules					*new_rule(char *data);
 void					push_rules(t_rules **rules, char *data);
 void					free_rules(t_rules *rules);
