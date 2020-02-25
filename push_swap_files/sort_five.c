@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 17:26:13 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:14:59 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 11:00:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ static void	check_worst_case(t_stack **root_a, t_stack **root_b)
 
 void		sort_five(t_stack **root_a, t_stack **root_b, int lo, int size)
 {
-	if (check_order(*root_a, *root_b))
-		return ;
 	check_last(root_a, lo, size);
 	push_lowest(root_a, root_b, lo, size);
 	sort_three(root_a);

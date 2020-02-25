@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:59:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 21:28:25 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 11:10:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int	read_instructions(t_rules **rules)
 	nbr = 0;
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
-		if (ft_strlen(line) > 3)
+		if (ft_strlen(line) > 3 || ft_strlen(line) < 2)
+		{
+			free(line);
 			return (0);
+		}
 		push_rules(rules, line);
 		free(line);
 	}
