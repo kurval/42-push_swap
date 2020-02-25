@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/25 10:41:10 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/25 20:16:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,15 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 	mid = 0;
 	tab = sort_tab(*root_a, size);
 	len = size - 1;
-	round = 1;
+	round = (size <= 100) ? 2 : 1;
 	while (!is_empty(*root_a) && round <= 10)
 	{
 		mid = (round == 10) ? tab[len] : tab[(size / 10) * round];
 		move_partitions(root_a, root_b, mid, pos);
 		pos = mid;
-		round++;
+		round = (size <= 100) ? round + 2 : round + 1;
 	}
+	print_stack(*root_a);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
 	free(tab);
