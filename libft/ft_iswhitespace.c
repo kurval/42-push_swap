@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 10:29:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 00:22:39 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/01/10 14:34:47 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/01/10 15:23:16 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 10000
-# define FD_MAX 4864
-
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft.h"
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+int		ft_iswhitespace(char const c)
+{
+	if (c == ' ' || c == '\n' || c == '\t' || \
+			c == '\v' || c == '\r' || c == '\f')
+		return (1);
+	return (0);
+}

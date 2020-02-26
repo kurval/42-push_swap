@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp_end.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 09:21:26 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/13 17:09:05 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/27 00:17:39 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/27 00:18:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
