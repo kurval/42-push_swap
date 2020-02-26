@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 21:56:19 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/25 20:16:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/26 21:48:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void		big_sort(t_stack **root_a, t_stack **root_b, int size)
 		pos = mid;
 		round = (size <= 100) ? round + 2 : round + 1;
 	}
-	print_stack(*root_a);
 	while (!is_empty(*root_b))
 		move_b(root_a, root_b, tab, &len);
 	free(tab);

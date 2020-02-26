@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/25 10:42:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/26 21:44:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_stack					*new_node(int data, char c, int sort);
 void					del_node(t_stack **node);
 void					push(t_stack **root, int data, char c, int sort);
 int						is_empty(t_stack *root);
-void					print_stack(t_stack *root);
+void					print_stack(t_stack *root_a, t_stack *root_b);
 void					free_stack(t_stack *root);
 void					push_ab(t_stack **root, t_stack **stack);
 void					swap(t_stack **root);
