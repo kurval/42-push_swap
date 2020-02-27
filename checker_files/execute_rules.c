@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_rules.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 15:31:44 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 21:08:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		execute_rules(t_stack **root_a, t_stack **root_b, t_rules *rules)
 	{
 		if ((*root_a)->flag)
 		{
-			ft_printf(BOLDBLUE "START\n" RESET);
+			ft_printf(BOLDGREEN "START\n" RESET);
 			print_stack(*root_a, *root_b);
 		}
 	}
@@ -59,7 +59,7 @@ void		execute_rules(t_stack **root_a, t_stack **root_b, t_rules *rules)
 		{
 			if ((*root_a)->flag)
 			{
-				ft_printf(BOLDBLUE "->%s\n" RESET, rules->data);
+				ft_printf(BOLDBLUE "=>%s\n" RESET, rules->data);
 				print_stack(*root_a, *root_b);
 			}
 		}

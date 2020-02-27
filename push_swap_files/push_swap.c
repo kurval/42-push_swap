@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:11:27 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 20:03:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	main(int arg, char **argc)
 	root_a = NULL;
 	root_b = NULL;
 	error_check(arg, argc);
+	if (check_flag(argc[1]))
+	{
+		ft_printf(BOLDRED "Error\n" RESET);
+		return (0);
+	}
 	while (--arg)
 		push(&root_a, ft_atoi(argc[arg]), 'a', 0);
 	error_doubles(root_a);
