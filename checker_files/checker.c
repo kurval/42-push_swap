@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:20:59 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:28:42 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int arg, char **argc)
 {
-	int i;
+	int		i;
 	t_stack	*root_a;
 	t_stack	*root_b;
 	t_rules	*rules_lst;

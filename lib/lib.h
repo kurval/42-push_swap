@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 10:47:00 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:29:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void					free_rules(t_rules *rules);
 void					print_rules(t_rules *rules);
 int						check_rev_order(t_stack *root_b);
 int						*sort_tab(t_stack *root_a, int size);
-int     				check_flag(char *first);
+int						check_flag(char *first);
 #endif

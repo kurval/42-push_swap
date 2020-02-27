@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 12:29:55 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:08:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:32:37 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	int		starting_point(const char *str)
 	return (i);
 }
 
-int		ft_atoi_err(const char *str)
+int				ft_atoi_err(const char *str)
 {
 	long	res;
 	int		sign;

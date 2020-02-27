@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 10:29:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 00:22:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:34:39 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@
 # include "libft.h"
 
 int		get_next_line(const int fd, char **line);
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:34:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:06:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:33:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,4 @@ int					ft_strncmp_end(const char *s1, const char *s2, size_t n);
 int					ft_printf(const char *format, ...);
 int					get_next_line(const int fd, char **line);
 int					ft_atoi_err(const char *str);
-
-
 #endif
