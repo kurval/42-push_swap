@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/25 10:35:59 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 10:57:50 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		reverse_rotate(t_stack **root)
 	second_last = *root;
 	while (second_last->next->next != NULL)
 		second_last = second_last->next;
-	s = second_last->next->sort ? 1 : 0;
+	s = second_last->next->flag ? 1 : 0;
 	push(root, second_last->next->data, c, s);
 	del_node(&second_last->next);
 }

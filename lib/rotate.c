@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/24 11:31:02 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 11:08:54 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		rotate(t_stack **root)
 		c = (*root)->stack == 'a' ? 'a' : 'b';
 	else
 		c = '-';
-	s = (*root)->sort ? 1 : 0;
+	s = (*root)->flag ? 1 : 0;
 	first = (*root)->data;
 	last = new_node(first, c, s);
 	temp = *root;

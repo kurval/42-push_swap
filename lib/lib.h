@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/26 21:44:12 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 10:47:00 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct			s_stack
 	struct s_stack		*next;
 	char				stack;
 	int					both;
-	int					sort;
+	int					flag;
 }						t_stack;
 
 typedef struct			s_rules
@@ -69,4 +69,5 @@ void					free_rules(t_rules *rules);
 void					print_rules(t_rules *rules);
 int						check_rev_order(t_stack *root_b);
 int						*sort_tab(t_stack *root_a, int size);
+int     				check_flag(char *first);
 #endif

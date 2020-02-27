@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:11:27 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/27 10:42:36 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/27 10:49:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
-int	main(int arg, char **argc)
+int check_flag(char *first)
 {
-	t_stack	*root_a;
-	t_stack	*root_b;
-
-	root_a = NULL;
-	root_b = NULL;
-	error_check(arg, argc);
-	while (--arg)
-		push(&root_a, ft_atoi(argc[arg]), 'a', 0);
-	error_doubles(root_a);
-	if (check_order(root_a, root_b))
-	{
-		free_stack(root_a);
-		return (0);
-	}
-	sort_stack(&root_a, &root_b);
-	free_stack(root_a);
-	return (0);
+    if (!ft_strncmp_end(first, "-v", 2))
+        return (1);
+    else
+        return (0);
 }

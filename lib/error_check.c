@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/19 11:02:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/27 14:11:07 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,14 @@ static int	cmp(int value1, int value2)
 
 void		error_check(int arg, char **argc)
 {
+	int i;
+
 	if (arg == 1)
 		exit(0);
-	while (--arg > 0)
+	i = (check_flag(argc[1])) ? 1 : 0;
+	while (--arg > i)
 	{
-		if (ft_atoi(argc[arg]) == -1)
+		if (ft_atoi_err(argc[arg]) == -1)
 		{
 			ft_printf(BOLDRED "Error\n" RESET);
 			exit(0);
