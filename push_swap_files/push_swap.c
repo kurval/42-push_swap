@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 17:55:02 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 20:02:56 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ int	main(int arg, char **argc)
 	(arg == 2) ? free_tab(tab) : 0;
 	error_doubles(root_a);
 	sort_stack(&root_a, &root_b);
-	free_stack(root_a);
 	return (0);
 }
