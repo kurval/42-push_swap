@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 17:47:09 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 20:28:57 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void					print_rules(t_rules *rules);
 int						check_rev_order(t_stack *root_b);
 int						*sort_tab(t_stack *root_a, int size);
 int						check_flag(char *first);
-void					push_args(int arg, char **argc, t_stack **root_a);
+void					push_args(int arg, char **argc, t_stack **root_a, char stack);
 void					free_tab(char **tab);
 #endif
