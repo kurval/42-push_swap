@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flag.c                                       :+:      :+:    :+:   */
+/*   push_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 10:42:36 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 10:37:15 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/28 16:38:48 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/28 17:18:14 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int	check_flag(char *first)
+void		push_args(int arg, char **argc, t_stack **root_a)
 {
-	if (!ft_strncmp_end(first, "-v", 2))
-		return (1);
-	else
-		return (0);
+    while (--arg)
+		push(root_a, ft_atoi(argc[arg]), 'a', 0);
 }

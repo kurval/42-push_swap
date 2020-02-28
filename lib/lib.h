@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 15:29:12 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 17:47:09 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct			s_rules
 	struct s_rules		*next;
 }						t_rules;
 
-void					error_check(int arg, char **argc);
+void					error_check(int arg, char **argc, int s);
 void					error_doubles(t_stack *lst);
 t_stack					*new_node(int data, char c, int sort);
 void					del_node(t_stack **node);
@@ -70,4 +70,6 @@ void					print_rules(t_rules *rules);
 int						check_rev_order(t_stack *root_b);
 int						*sort_tab(t_stack *root_a, int size);
 int						check_flag(char *first);
+void					push_args(int arg, char **argc, t_stack **root_a);
+void					free_tab(char **tab);
 #endif

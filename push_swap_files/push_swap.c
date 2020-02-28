@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 20:03:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 17:55:02 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ int	main(int arg, char **argc)
 {
 	t_stack	*root_a;
 	t_stack	*root_b;
+	char	**tab;
+	int		size;
 
 	root_a = NULL;
 	root_b = NULL;
-	error_check(arg, argc);
+	tab = (arg == 2) ? ft_strsplit(argc[1], ' ') : NULL;
+	size = (arg == 2) ? ft_tab_size(tab) : 0;
+	(arg == 2) ? error_check(size, tab, 1) : error_check(arg, argc, 0);
 	if (check_flag(argc[1]))
 	{
+		(arg == 2) ? free_tab(tab) : 0;
 		ft_printf(BOLDRED "Error\n" RESET);
 		return (0);
 	}
-	while (--arg)
-		push(&root_a, ft_atoi(argc[arg]), 'a', 0);
+	(arg == 2) ? push_args(size, tab, &root_a) : push_args(arg, argc, &root_a);
+	(arg == 2) ? free_tab(tab) : 0;
 	error_doubles(root_a);
-	if (check_order(root_a, root_b))
-	{
-		free_stack(root_a);
-		return (0);
-	}
 	sort_stack(&root_a, &root_b);
 	free_stack(root_a);
 	return (0);

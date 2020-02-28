@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flag.c                                       :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 10:42:36 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 10:37:15 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/28 17:27:22 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/28 17:30:29 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int	check_flag(char *first)
+void free_tab(char **tab)
 {
-	if (!ft_strncmp_end(first, "-v", 2))
-		return (1);
-	else
-		return (0);
+    int i;
+
+    i = 0;
+    while (tab[i])
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
 }

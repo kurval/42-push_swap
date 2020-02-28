@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flag.c                                       :+:      :+:    :+:   */
+/*   ft_tab_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 10:42:36 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 10:37:15 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/02/28 15:40:37 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/02/28 15:58:09 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-int	check_flag(char *first)
+int ft_tab_size(char **tab)
 {
-	if (!ft_strncmp_end(first, "-v", 2))
-		return (1);
-	else
-		return (0);
+    int size;
+    int i;
+
+    size = 0;
+    i = 0;
+    while (tab[i])
+    {
+        size++;
+        i++;
+    }
+    return (size);
 }

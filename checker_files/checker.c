@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 20:39:27 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 17:48:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int arg, char **argc)
 
 	root_a = NULL;
 	root_b = NULL;
-	error_check(arg, argc);
+	error_check(arg, argc, 0);
 	i = (check_flag(argc[1])) ? 1 : 0;
 	while (--arg > i)
 		push(&root_a, ft_atoi(argc[arg]), '-', i);

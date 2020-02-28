@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_med.c                                         :+:      :+:    :+:   */
+/*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 15:20:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/25 10:24:55 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 10:37:55 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "lib.h"
 
 static void	ft_swap(int *a, int *b)
 {

@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:43:33 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 11:08:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 10:37:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "lib.h"
 
 static void	print_rotate(t_stack *root)
 {

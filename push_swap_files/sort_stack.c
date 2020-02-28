@@ -6,50 +6,39 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 12:01:40 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 15:54:41 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_stack_test(t_stack **root_a, t_stack **root_b)
+static int	count_stack_size(t_stack *root_a, int *lo)
 {
-	int tmp;
+	int		size;
+	t_stack *current;
 
-	tmp = (*root_a)->data;
-	push_ab(root_a, root_b);
-	while (!is_empty(*root_a))
+	current = root_a;
+	size = 0;
+	while (current)
 	{
-		tmp = (*root_a)->data;
-		if (tmp > (*root_b)->data)
-			push_ab(root_a, root_b);
-		else
-		{
-			rotate(root_a);
-			while ((*root_b) && tmp < (*root_b)->data)
-				push_ab(root_b, root_a);
-			reverse_rotate(root_a);
-			push_ab(root_a, root_b);
-		}
+		*lo = current->data < *lo ? current->data : *lo;
+		current = current->next;
+		size++;
 	}
-	while (!is_empty(*root_b))
-		push_ab(root_b, root_a);
+	return (size);
 }
 
 void	sort_stack(t_stack **root_a, t_stack **root_b)
 {
-	t_stack *current;
 	int		size;
 	int		lo;
 
-	current = *root_a;
-	size = 0;
 	lo = (*root_a)->data;
-	while (current)
+	size = count_stack_size(*root_a, &lo);
+	if (check_order(*root_a, *root_b))
 	{
-		lo = current->data < lo ? current->data : lo;
-		current = current->next;
-		size++;
+		free_stack(*root_a);
+		exit(0);
 	}
 	if (size == 2 && (*root_a)->data > (*root_a)->next->data)
 		rotate(root_a);

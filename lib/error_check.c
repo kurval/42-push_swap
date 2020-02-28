@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 15:17:57 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 14:11:07 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 17:52:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	cmp(int value1, int value2)
 		return (1);
 }
 
-void		error_check(int arg, char **argc)
+void		error_check(int arg, char **argc, int s)
 {
 	int i;
 
@@ -32,6 +32,7 @@ void		error_check(int arg, char **argc)
 		if (ft_atoi_err(argc[arg]) == -1)
 		{
 			ft_printf(BOLDRED "Error\n" RESET);
+			(s) ? free_tab(argc) : 0;
 			exit(0);
 		}
 	}

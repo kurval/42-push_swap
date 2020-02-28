@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_rev_order.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 20:22:38 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/20 11:28:29 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 10:37:27 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "lib.h"
 
 int		check_rev_order(t_stack *root_b)
 {
