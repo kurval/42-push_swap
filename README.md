@@ -54,5 +54,5 @@ Run **make** from terminal and use command:
 
 ![example](screenshot.png)
 
-*Information about sorting algorithms:*  
+*More information about sorting algorithms:*  
 https://eternallyconfuzzled.com/sorting-c-introduction-to-the-automatic-ordering-of-data/
