@@ -36,7 +36,7 @@ becomes the first one.
 
 I used linked list implementation to form stacks and for storing the rules.
 
-I have three different algortihms for different amount of arguments:
+I have three different algortihms for different amount of integers:
 
 **sort_three**: Sorts three integers less than 3 moves. This was quite simple because there was only 3 X 2 different combinations.      
 **sort_five**: Sorts five integers in less than 11 moves. Best case is 7 moves (see the example). This algorithm finds the lowest number that is pushed to stack B following the next integer that is also pushed to stack B. After that I can use sort_three to solve stack A and push lowest number from stack B back to A. Then I have to find the right spot for the last number and put in place.  
