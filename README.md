@@ -47,7 +47,6 @@ This algorithm sorts 100 integers in ~700 moves and 500 in ~7000 moves.
 ## Compiling and Usage
 
 Run **make** from terminal and use command:  
-
 ``./push_swap [int arguments] | [-v] ./checker [int arguments]``  
 -v flag for visual mode. See the example below
 
