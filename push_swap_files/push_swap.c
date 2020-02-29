@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:14:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 20:27:06 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 20:43:55 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,10 @@ int	main(int arg, char **argc)
 	root_b = NULL;
 	tab = (arg == 2) ? ft_strsplit(argc[1], ' ') : NULL;
 	size = (arg == 2) ? ft_tab_size(tab) : 0;
-	(arg == 2) ? error_check(size, tab, 1) : error_check(arg, argc, 0);
-	if (check_flag(argc[1]))
-	{
-		(arg == 2) ? free_tab(tab) : 0;
-		ft_printf(BOLDRED "Error\n" RESET);
-		return (0);
-	}
-	(arg == 2) ? push_args(size, tab, &root_a, 'a') : push_args(arg, argc, &root_a, 'a');
+	(arg == 2) ? error_check(size, tab, 1) :\
+	error_check(arg, argc, 0);
+	(arg == 2) ? push_args(size, tab, &root_a, 'a') :\
+	push_args(arg, argc, &root_a, 'a');
 	(arg == 2) ? free_tab(tab) : 0;
 	error_doubles(root_a);
 	sort_stack(&root_a, &root_b);

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/27 21:08:30 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/28 22:01:16 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,28 +41,14 @@ static void	check_swap(t_stack **root_a, t_stack **root_b, t_rules *rules)
 
 void		execute_rules(t_stack **root_a, t_stack **root_b, t_rules *rules)
 {
-	if ((*root_a))
-	{
-		if ((*root_a)->flag)
-		{
-			ft_printf(BOLDGREEN "START\n" RESET);
-			print_stack(*root_a, *root_b);
-		}
-	}
+	print_start(*root_a, *root_b);
 	while (rules)
 	{
 		check_swap(root_a, root_b, rules);
 		check_push(root_a, root_b, rules);
 		check_r(root_a, root_b, rules);
 		check_rr(root_a, root_b, rules);
-		if ((*root_a))
-		{
-			if ((*root_a)->flag)
-			{
-				ft_printf(BOLDBLUE "=>%s\n" RESET, rules->data);
-				print_stack(*root_a, *root_b);
-			}
-		}
+		print_steps(*root_a, *root_b, rules->data);
 		rules = rules->next;
 	}
 	free(rules);
