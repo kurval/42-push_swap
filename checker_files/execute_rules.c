@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:18:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 22:01:16 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/29 17:13:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ static void	check_swap(t_stack **root_a, t_stack **root_b, t_rules *rules)
 
 void		execute_rules(t_stack **root_a, t_stack **root_b, t_rules *rules)
 {
+	int	size;
+
+	size = count_rules(rules);
 	print_start(*root_a, *root_b);
 	while (rules)
 	{
@@ -51,5 +54,6 @@ void		execute_rules(t_stack **root_a, t_stack **root_b, t_rules *rules)
 		print_steps(*root_a, *root_b, rules->data);
 		rules = rules->next;
 	}
+	print_lines(*root_a, size);
 	free(rules);
 }

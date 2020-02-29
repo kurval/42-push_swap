@@ -6,11 +6,20 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/29 08:48:36 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/29 17:15:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
+
+void		print_lines(t_stack *root_a, int size)
+{
+	if ((root_a))
+	{
+		if ((root_a)->flag)
+			ft_printf(BOLDBLUE "Lines: %d\n" RESET, size);
+	}
+}
 
 void		print_start(t_stack *root_a, t_stack *root_b)
 {

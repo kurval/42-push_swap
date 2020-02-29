@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 10:11:14 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 21:33:42 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/02/29 17:11:15 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,6 @@ void					push_args(int arg, char **argc, t_stack **root_a, char stack);
 void					free_tab(char **tab);
 void					print_start(t_stack *root_a, t_stack *root_b);
 void					print_steps(t_stack *root_a, t_stack *root_b, char *step);
+int						count_rules(t_rules *rules);
+void					print_lines(t_stack *root_a, int size);
 #endif
