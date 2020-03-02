@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:51:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 21:06:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:38:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void		reverse_rotate(t_stack **root)
 		c = (*root)->stack == 'a' ? 'a' : 'b';
 	else
 		c = '-';
-	
 	second_last = *root;
 	while (second_last->next->next != NULL)
 		second_last = second_last->next;

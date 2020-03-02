@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:24:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 15:54:41 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:45:56 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	count_stack_size(t_stack *root_a, int *lo)
 	return (size);
 }
 
-void	sort_stack(t_stack **root_a, t_stack **root_b)
+void		sort_stack(t_stack **root_a, t_stack **root_b)
 {
 	int		size;
 	int		lo;

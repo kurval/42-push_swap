@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:26:04 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/29 08:54:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:35:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-static void	get_rules(t_rules	**rules_lst, t_stack *root_a)
+static void	get_rules(t_rules **rules_lst, t_stack *root_a)
 {
 	if (!read_instructions(rules_lst) || !check_rules(*rules_lst))
 	{

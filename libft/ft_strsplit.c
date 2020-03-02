@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 15:35:12 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 17:36:16 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:43:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_tab(const char *str, char c)
+static int		ft_words(const char *str, char c)
 {
 	int words;
 
@@ -32,7 +32,7 @@ static int		ft_count_tab(const char *str, char c)
 	return (words);
 }
 
-static int		ft_count_str(const char *str, char c)
+static int		letters(const char *str, char c)
 {
 	int len;
 
@@ -50,7 +50,7 @@ static char		**allocate_tab(char const *s, char c)
 	char	**tab;
 
 	if (!s || (!(tab = (char **)malloc(sizeof(char *) * \
-						(ft_count_tab(s, c) + 2)))))
+						(ft_words(s, c) + 2)))))
 		return (NULL);
 	return (tab);
 }
@@ -71,8 +71,7 @@ char			**ft_strsplit(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			if (!(tab[j] = (char *)malloc(sizeof(char) * \
-							(ft_count_str(s, c) + 1))))
+			if (!(tab[j] = (char *)malloc(sizeof(char) * (letters(s, c) + 1))))
 				return (NULL);
 			while (*s && *s != c)
 				tab[j][i++] = (char)*s++;
