@@ -50,7 +50,7 @@ Run **make** from terminal and use command:
 
 ## EXAMPLE
 
-``ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker -v $ARG``    
+``./push_swap 1 5 2 4 3 | ./checker -v 1 5 2 4 3``    
 
 ![example](screenshot.png)
 
