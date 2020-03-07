@@ -1,5 +1,7 @@
 # 42-push_swap
 
+![](https://j.gifs.com/NL26Bm.gif)
+
 ## Goal
 
 The push_swap project is a very simple and highly effective algorithm project: data will
