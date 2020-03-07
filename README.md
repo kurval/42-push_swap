@@ -1,7 +1,5 @@
 # 42-push_swap
 
-![](video.mov)
-
 ## Goal
 
 The push_swap project is a very simple and highly effective algorithm project: data will
