@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 21:01:45 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/29 17:15:36 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/03/07 11:04:03 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,22 @@ void		print_steps(t_stack *root_a, t_stack *root_b, char *step)
 	{
 		if ((root_a)->flag)
 		{
+			system("clear");
 			ft_printf(BOLDGREEN "=>" RESET);
 			ft_printf(BOLDBLUE "%s\n" RESET, step);
 			print_stack(root_a, root_b);
+			usleep(90000);
 		}
 	}
 	else if (root_b)
 	{
 		if ((root_b)->flag)
 		{
+			system("clear");
 			ft_printf(BOLDGREEN "=>" RESET);
 			ft_printf(BOLDBLUE "%s\n" RESET, step);
 			print_stack(root_a, root_b);
+			usleep(90000);
 		}
 	}
 }
