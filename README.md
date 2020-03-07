@@ -15,7 +15,7 @@ are sorted. Otherwise, it will display KO.
 • The second one called **push_swap** which calculates and displays on the standard
 output the smallest progam using Push_swap instruction language that sorts integer arguments received.  
 
-• The goal is to sort in ascending order numbers into stack a.  
+• **The goal** is to sort in ascending order numbers into stack a.  
 • To do this you have the following operations at your disposal:  
 **sa** : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
 is only one or no elements).  
