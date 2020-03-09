@@ -46,7 +46,7 @@ I have three different algorithms for different amount of integers:
 
 ## Future optimizing
 
-I could optimize big_sort by calculating which number would take least moves from each chunk and move it to the right spot from stack B.
+I could optimize big_sort by calculating which number would take least moves from each chunk and place it to the right place to the stack A insted of searching always the biggest number of index.
 
 ## Compiling and Usage
 
