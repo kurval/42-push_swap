@@ -34,7 +34,7 @@ the last one.
 **rra** : reverse rotate a - shift down all elements of stack a by 1. The last element
 becomes the first one.  
 
-## My solution and results
+## Approach
 
 I used linked list implementation to form stacks and for storing the rules.
 
