@@ -6,7 +6,7 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/07 12:00:29 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/26 23:59:03 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/04/19 18:12:10 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,16 @@ FLAGS = -Wall -Wextra -Werror -I$(HEADERS)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	mkdir obj
-	mv $(OBJ) ./obj
+	@$(CC) $(FLAGS) -c $(SRC)
+	@ar rc $(NAME) $(OBJ)
+	@mkdir obj
+	@mv $(OBJ) ./obj
 	
 clean:
-	/bin/rm -Rf obj
+	@/bin/rm -Rf obj
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 

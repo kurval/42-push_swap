@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/10 10:06:21 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/27 10:47:18 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/04/19 18:11:12 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,12 @@ SRC2 = checker_files/checker.c checker_files/read_instructions.c \
 
 OBJ = *.o
 
+GREEN = \033[1;32m
+RED = \033[1;31m
+YEL = \033[1;33m
+WHT = \033[1;37m
+EOC = \033[1;0m
+
 HEADERS1 = includes/push_swap.h
 HEADERS2 = includes/checker.h
 
@@ -35,27 +41,38 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME1)
 
 $(NAME1):
+	@echo "$(WHT)Compiling libraries...$(EOC)"
 	@${MAKE} -C libft
 	@${MAKE} -C lib
-	$(CC) $(FLAGS) -c $(SRC1) -I$(HEADERS1)
-	$(CC) $(FLAGS) -o $(NAME1) $(OBJ) $(LIBFT) $(LIB)
-	mkdir obj
-	mv $(OBJ) ./obj
+	@echo "$(GREEN)Libraries done.$(EOC)"
 
-	$(CC) $(FLAGS) -c $(SRC2) -I$(HEADERS2)
-	$(CC) $(FLAGS) -o $(NAME2) $(OBJ) $(LIBFT) $(LIB)
-	mv $(OBJ) ./obj
+	@echo "$(WHT)Compiling push_swap...$(EOC)"
+	@$(CC) $(FLAGS) -c $(SRC1) -I$(HEADERS1)
+	@$(CC) $(FLAGS) -o $(NAME1) $(OBJ) $(LIBFT) $(LIB)
+	@mkdir obj
+	@mv $(OBJ) ./obj
+	@echo "$(GREEN)push_swap build completed.$(EOC)"
+
+	@echo "$(WHT)Compiling checker...$(EOC)"
+	@$(CC) $(FLAGS) -c $(SRC2) -I$(HEADERS2)
+	@$(CC) $(FLAGS) -o $(NAME2) $(OBJ) $(LIBFT) $(LIB)
+	@mv $(OBJ) ./obj
+	@echo "$(GREEN)checker build completed.$(EOC)"
 	
 clean:
-	/bin/rm -f $(OBJ)
-	/bin/rm -Rf obj
+	@echo "$(WHT)Removing o-files...$(EOC)"
+	@/bin/rm -f $(OBJ)
+	@/bin/rm -Rf obj
 	@${MAKE} -C libft clean
 	@${MAKE} -C lib clean
+	@echo "$(GREEN)Clean done.$(EOC)"
 
 fclean: clean
-	/bin/rm -f $(NAME1) $(NAME2)
+	@echo "$(WHT)Removing object- and binary -files...$(EOC)"
+	@/bin/rm -f $(NAME1) $(NAME2)
 	@${MAKE} -C libft fclean
 	@${MAKE} -C lib fclean
+	@echo "$(GREEN)Fclean done.$(EOC)"
 
 re: fclean all
 

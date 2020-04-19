@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+         #
+#    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2020/02/28 15:42:21 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/04/19 18:04:24 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,15 +39,15 @@ all: $(NAME)
 $(NAME):
 	@${MAKE} -C printf
 	@cp printf/libftprintf.a ./libft.a
-	$(CC) $(FLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJECTS)
+	@$(CC) $(FLAGS) -c $(SRC)
+	@ar rc $(NAME) $(OBJECTS)
 
 clean:
-	/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
 	@${MAKE} -C printf clean
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 	@${MAKE} -C printf fclean
 
 re: fclean all
