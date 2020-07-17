@@ -51,7 +51,7 @@ I could optimize big_sort by calculating which number would take least moves fro
 ## Compiling and Usage
 
 Run **make** from terminal and use command:  
-``./push_swap [int arguments] | [-v] ./checker [int arguments]``  
+``./push_swap [int arguments] | ./checker [-v] [int arguments]``  
 -v flag for visual mode. See the example below
 
 ## EXAMPLE
