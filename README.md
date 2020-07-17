@@ -40,9 +40,11 @@ I used linked list implementation to form stacks and for storing the rules.
 
 I have three different algorithms for different amount of integers:
 
-**sort_three**: Sorts three integers less than 3 moves. This was quite simple because there was only 3 X 2 different combinations.      
+**sort_three**: Sorts three integers less than 3 moves. This was quite simple because there was only 3 X 2 different combinations.  
+
 **sort_five**: Sorts five integers in less than 11 moves. Best case is 7 moves (see the example). This algorithm finds the lowest number that is pushed to stack B following the next integer that is also pushed to stack B. After that I can use sort_three to solve stack A and push lowest number from stack B back to A. Then I have to find the right spot for the last number and put in place.  
-**big_sort**: This algorithm is designed for larger amount of integers. This algorithm splits stack A into smaller chunks which are pushed to stack B: <= 100 are splitted into 5 chunks and > 100 integers into 10 chunks. Smaller chunks are pushed first to stack B. I used sorted array of integers to help me to split stack A. When all of the numbers are in the stack B then I can start to search numbers from biggest number and push them back to stack A. This continues until B is empty and A is sorted. For optimizing I created a function called shortest way to check is it more effective to use rb or rrb to get that number on top of the stack B.
+
+**big_sort**: This algorithm is designed for larger amount of integers. This algorithm splits stack A into smaller chunks which are pushed to stack B: <= 100 are splitted into 5 chunks and > 100 integers into 10 chunks. **Chunks with smallest numbers** are pushed first to stack B. I used sorted array of integers to help me to split stack A. When all of the numbers are in the stack B then I can start to search numbers from biggest number and push them back to stack A. This continues until B is empty and A is sorted. For optimizing I created a function called shortest way to check is it more effective to use rb or rrb to get that number on top of the stack B.
 
 ## Future optimizing
 
