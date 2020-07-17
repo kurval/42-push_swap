@@ -1,6 +1,6 @@
 # 42-push_swap
 
-![](https://j.gifs.com/NL26Bm.gif)
+![gif](https://media.giphy.com/media/Z9KQXYnxTpWIMArgTP/giphy.gif)
 
 ## Goal
 
